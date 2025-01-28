@@ -1,9 +1,26 @@
-// @font-face {
-//   font-family: 'Cormorant SC';
-//   src: url('$fonts/CormorantSC/CormorantSC.woff2') format('woff2'),
-//     url('$fonts/CormorantSC/CormorantSC.woff') format('woff'),
-//     url('$fonts/CormorantSC/CormorantSC.ttf') format('truetype');
-//   font-weight: 500;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: 'IviSans';
+  src: url('./font-files/IviSans-Regular.woff2') format('woff2'),
+    url('./font-files/IviSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IviSans';
+  src: url('./font-files/IviSans-Medium.woff2') format('woff2'),
+    url('./font-files/IviSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IviSans';
+  src: url('./font-files/IviSans-Bold.woff2') format('woff2'),
+    url('./font-files/IviSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

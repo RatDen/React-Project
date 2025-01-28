@@ -1,13 +1,13 @@
-import './assets/styles/index.css'
+import './assets/styles/index.css';
 
-import { AppRoutes } from "./routing"
+import { AppRoutes } from './routing';
 
 function App() {
-    return (
-      <>
-        <AppRoutes />
-      </>
-    )
-  }
+  return (
+    <>
+      <AppRoutes />
+    </>
+  );
+}
 
-export default App
+export default App;

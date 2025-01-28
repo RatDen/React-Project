@@ -1,0 +1,11 @@
+.main {
+  background-color: var(--bg-color);
+}
+
+.main__content {
+  width: var(--content-width);
+  height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 60px;
+}
