@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 
-const NavMenu = () => {
+export const NavMenu = () => {
   return (
     <nav className={styles.menu}>
       <ul className={styles.menu__list}>
@@ -23,5 +23,3 @@ const NavMenu = () => {
     </nav>
   );
 };
-
-export default NavMenu;

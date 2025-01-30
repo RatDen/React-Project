@@ -1,15 +1,14 @@
 import styles from './styles.module.css';
-import NavMenu from '../navigation-menu';
+import { NavMenu } from '../navigation-menu';
 import Logo from '@images/svg/iviLogo.svg?react';
-import ActionButton from '@/shared/ui/action-button';
 import { Avatar, Bell, Search } from '@/app/assets/images';
-import ActionLink from '@/shared/ui/action-link';
+import { ActionButton, ActionLink } from '@/shared/ui';
 
 {
   /* TODO: реализовать анимацию наведения (сделать компонент-обертку для элементов хедера) */
 }
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.header__content}>
@@ -46,5 +45,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

@@ -1,18 +1,18 @@
 import styles from './styles.module.css';
 
-type TSideSourceViewProps = {
+type SideSourceViewProps = {
   img: string;
   alt?: string;
   text: string;
   title: string;
 };
 
-const SideSourceView = ({
+export const SideSourceView = ({
   img,
   alt = '',
   text,
   title,
-}: TSideSourceViewProps) => {
+}: SideSourceViewProps) => {
   return (
     <div className={styles.view_container}>
       <img src={img} alt={alt} className={styles.view__image} />
@@ -23,5 +23,3 @@ const SideSourceView = ({
     </div>
   );
 };
-
-export default SideSourceView;

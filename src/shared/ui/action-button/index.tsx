@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 
-type TActionButtonProps = {
+type ActionButtonProps = {
   children?: ReactElement | ReactElement[];
   onClick?: () => void;
   round?: boolean;
@@ -10,13 +10,13 @@ type TActionButtonProps = {
   promo?: boolean;
 };
 
-const ActionButton = ({
+export const ActionButton = ({
   children,
   onClick,
   round = false,
   square = false,
   promo = false,
-}: TActionButtonProps) => {
+}: ActionButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -31,5 +31,3 @@ const ActionButton = ({
     </button>
   );
 };
-
-export default ActionButton;

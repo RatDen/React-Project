@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import { Header, Footer } from '@/widgets';
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <>
       <Header />
@@ -12,5 +12,3 @@ const Layout = () => {
     </>
   );
 };
-
-export default Layout;

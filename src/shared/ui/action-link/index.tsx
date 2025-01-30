@@ -2,19 +2,19 @@ import styles from './styles.module.css';
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 
-type TActionLinkProps = {
+type ActionLinkProps = {
   href: string;
   children?: ReactElement | ReactElement[];
   round?: boolean;
   square?: boolean;
 };
 
-const ActionLink = ({
+export const ActionLink = ({
   href,
   children,
   round = false,
   square = false,
-}: TActionLinkProps) => {
+}: ActionLinkProps) => {
   return (
     <a
       href={href}
@@ -28,5 +28,3 @@ const ActionLink = ({
     </a>
   );
 };
-
-export default ActionLink;

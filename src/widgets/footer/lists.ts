@@ -16,7 +16,12 @@ import {
   Telegram,
 } from '@/app/assets/images';
 
-export const About = [
+export type SimpleLink = {
+  link: string;
+  title: string;
+};
+
+export const About: SimpleLink[] = [
   {
     link: '#',
     title: 'О компании',
@@ -59,7 +64,7 @@ export const About = [
   },
 ];
 
-export const Sections = [
+export const Sections: SimpleLink[] = [
   {
     link: '#',
     title: 'Мой Иви',
@@ -90,7 +95,15 @@ export const Sections = [
   },
 ];
 
-export const SideSources = [
+export type SideSource = {
+  link: string;
+  title: string;
+  text: string;
+  image: string;
+  alt: string;
+};
+
+export const SideSources: SideSource[] = [
   {
     link: '',
     title: 'App Store',
@@ -135,7 +148,13 @@ export const SideSources = [
   },
 ];
 
-export const Socials = [
+export type SocialsLink = {
+  link: string;
+  image: string;
+  alt: string;
+};
+
+export const Socials: SocialsLink[] = [
   {
     link: '',
     image: VK,
