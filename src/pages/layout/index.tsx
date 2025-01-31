@@ -1,12 +1,15 @@
+import styles from './styles.module.css';
 import { Header, Footer } from '@/widgets';
+import { Outlet } from 'react-router-dom';
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <>
       <Header />
+      <main className={styles.main}>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );
 };
-
-export default Layout;
