@@ -3,6 +3,7 @@ import { NavMenu } from '../navigation-menu';
 import Logo from '@images/svg/iviLogo.svg?react';
 import { Avatar, Bell, Search } from '@/app/assets/images';
 import { ActionButton, ActionLink } from '@/shared/ui';
+import { Link } from 'react-router-dom';
 
 {
   /* TODO: реализовать анимацию наведения (сделать компонент-обертку для элементов хедера) */
@@ -13,7 +14,9 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={styles.header__content}>
         <div className={styles.header__content_wrap}>
-          <Logo />
+          <Link to='/'>
+            <Logo />
+          </Link>
           <NavMenu />
         </div>
         <div className={styles.header__actions_wrap}>

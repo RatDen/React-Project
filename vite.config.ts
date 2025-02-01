@@ -15,6 +15,7 @@ export default defineConfig({
       '@types': path.resolve(__dirname, './src/shared/types'),
       '@ui': path.resolve(__dirname, './src/shared/ui'),
       '@fonts': path.resolve(__dirname, './src/app/assets/fonts'),
+      '@services': path.resolve(__dirname, './src/services'),
     },
   },
   build: {

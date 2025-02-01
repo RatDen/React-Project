@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.cardsContainer {
+  width: 1260px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  transition: transform 0.5s ease;
+  padding: 6px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 100vh;
+  padding: 20px;
+  cursor: grab;
+}
+.cardBlock {
+  width: 100%;
+  margin-bottom: 20px;
+  /* overflow: hidden; */
+}
+.card {
+  background-color: rgb(54, 54, 54);
+  width: 240px;
+  height: 360px;
+  border-radius: 24px;
+  position: relative;
+  color: white;
+  margin-bottom: 10px;
+  transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out;
+  overflow: hidden;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.cardAbsolute {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  z-index: 1;
+  padding: 16px;
+}
+.leftSide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.rightSide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+}
+.tag {
+  position: absolute;
+  left: -20px;
+  background-color: red;
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cardHover {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.cardHover:hover .card {
+  transform: scale(1.02);
+}
+.cardHover:hover .card::after {
+  opacity: 1;
+}
+.cardHover:hover .cardAbsolute {
+  opacity: 1;
+  visibility: visible;
+}

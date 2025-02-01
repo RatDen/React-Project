@@ -8,14 +8,15 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "paths": {
-			"@/*": ["./src/*"],
-			"@widgets/*": ["./src/widgets/*"],
+      "@/*": ["./src/*"],
+      "@widgets/*": ["./src/widgets/*"],
       "@images/*": ["./src/images/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@types/*": ["./src/types/*"],
       "@ui/*": ["./src/ui/*"],
-			"@fonts/*": ["./src/fonts/*"],
-		},
+      "@fonts/*": ["./src/fonts/*"],
+      "@services/*": ["./src/services/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "Node",
