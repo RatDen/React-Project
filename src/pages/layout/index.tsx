@@ -1,11 +1,11 @@
 import { Header, Footer } from '@/widgets';
-import Cards from '../../components/Cards';
+import { Cards } from '../../components/Cards';
 
 const Layout = () => {
   return (
     <>
       <Header />
-			<Cards />
+      <Cards />
       <Footer />
     </>
   );
