@@ -1,0 +1,12 @@
+.footer__content {
+  width: var(--content-width);
+  min-height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 48px 0;
+}
+
+.footer__content_border {
+  border-top: 2px solid var(--color-pale, hsla(0, 0%, 100%, 0.48));
+  border-bottom: 2px solid var(--color-pale, hsla(0, 0%, 100%, 0.48));
+}

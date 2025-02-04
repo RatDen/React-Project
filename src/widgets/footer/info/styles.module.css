@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+}
+
+.info_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  white-space: pre-line;
+}
+
+.button_group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.button_group_wrap {
+  display: flex;
+  gap: 12px;
+}
+
+.chat_button__text {
+  padding: 0 25px;
+}
+
+.promo_widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 104px;
+  border-radius: 20px;
+  box-shadow: 0 0 104px #a869f0;
+  background: linear-gradient(180deg, #a869f0 0, #834cc2 100%);
+  aspect-ratio: 1;
+}

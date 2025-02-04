@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu__list {
+  display: flex;
+  gap: 16px;
+  color: var(--color-pale, hsla(0, 0%, 100%, 0.48));
+}
+
+.menu__list_item {
+}
