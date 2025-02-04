@@ -4,11 +4,11 @@ import styles from './cards.module.css';
 import { useMovies } from './useMovies';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 
+const CARD_WIDTH = 300;
+
 export const Cards: FC = () => {
   const { movies, error, loading } = useMovies();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-  const cardWidth = 300;
 
   if (loading) {
     return <p className={styles.loading}>Загрузка...</p>;
@@ -23,7 +23,6 @@ export const Cards: FC = () => {
   };
 
   return (
-    <>
       <div className={styles.container}>
         <h1 className={styles.title}>Фильмы-новинки &#62;</h1>
         {error && <p className={styles.error}>Ошибка: {error}</p>}
@@ -35,8 +34,7 @@ export const Cards: FC = () => {
             <div
               className={styles.sliderMove}
               style={{
-                transform: `translateX(-${currentIndex * cardWidth}px)`,
-                transition: 'transform 0.3s ease-in-out',
+                transform: `translateX(-${currentIndex * CARD_WIDTH}px)`,
               }}
             >
               {movies.map((movie) => (
@@ -59,6 +57,5 @@ export const Cards: FC = () => {
           </button>
         </div>
       </div>
-    </>
   );
 };

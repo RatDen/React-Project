@@ -11,8 +11,8 @@
 .title {
   margin-bottom: 20px;
   cursor: pointer;
-	font-size: 24px;
-	margin-left: 46px;
+  font-size: 24px;
+  margin-left: 46px;
 }
 .slider {
   display: flex;
@@ -37,4 +37,5 @@
   gap: 28px;
   transition: transform 0.5s ease;
   padding: 6px;
+  transition: transform 0.3s ease-in-out;
 }
