@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 
-type ActionButtonProps = {
+export type ActionButtonProps = {
   children?: ReactElement | ReactElement[];
   onClick?: () => void;
   round?: boolean;

@@ -21,7 +21,7 @@
 }
 
 .header__button_text {
-  padding: 0 23px;
+  padding: 0 33px;
   font-weight: var(--font-weight-medium, 500);
   font-size: var(--font-size-s, 13px);
 }
@@ -42,6 +42,10 @@
   gap: 20px;
 }
 
+.header__actions_wrap button {
+  height: 32px;
+}
+
 .header__profile_button > a {
   padding: 4px 12px 4px 4px;
 }
@@ -57,7 +61,7 @@
   width: 16px;
   border-radius: 8px;
   padding: 8px;
-  background-color: var(--bg-color-interface-second, #312b45);
+  background-color: var(--bg-color-ui-accent, #312b45);
   aspect-ratio: 1;
 }
 

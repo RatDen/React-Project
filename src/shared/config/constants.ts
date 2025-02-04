@@ -1,0 +1,3 @@
+export const CONTENT_WIDTH = 1260;
+
+export const SLIDER_TRANSITION_DURATION = 500;
