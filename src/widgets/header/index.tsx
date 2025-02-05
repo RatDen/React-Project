@@ -3,6 +3,8 @@ import { NavMenu } from '../navigation-menu';
 import Logo from '@images/svg/iviLogo.svg?react';
 import { Avatar, Bell, Search } from '@/app/assets/images';
 import { ActionButton, ActionLink } from '@/shared/ui';
+import { Link } from 'react-router-dom';
+import { Routes } from '@/shared/config';
 
 {
   /* TODO: реализовать анимацию наведения (сделать компонент-обертку для элементов хедера) */
@@ -13,7 +15,9 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={styles.header__content}>
         <div className={styles.header__content_wrap}>
-          <Logo />
+          <Link to='/'>
+            <Logo />
+          </Link>
           <NavMenu />
         </div>
         <div className={styles.header__actions_wrap}>
@@ -28,18 +32,20 @@ export const Header = () => {
           <a href='#' className={styles.header__link}>
             <Bell />
           </a>
-          <div className={styles.header__profile_button}>
-            <ActionLink href='#'>
-              <div className={styles.header__profile_button_wrap}>
-                <img
-                  src={Avatar}
-                  alt='Аватар'
-                  className={styles.header__profile_button__icon}
-                />
-                <p className={styles.header__profile_button__text}>Войти</p>
-              </div>
-            </ActionLink>
-          </div>
+          <Link to={Routes.SIGNIN}>
+            <div className={styles.header__profile_button}>
+              <ActionLink href='#'>
+                <div className={styles.header__profile_button_wrap}>
+                  <img
+                    src={Avatar}
+                    alt='Аватар'
+                    className={styles.header__profile_button__icon}
+                  />
+                  <p className={styles.header__profile_button__text}>Войти</p>
+                </div>
+              </ActionLink>
+            </div>
+          </Link>
         </div>
       </div>
     </header>
