@@ -1,4 +1,6 @@
 import React, { FC, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Routes } from '@/shared/config';
 import { Card } from './Card';
 import styles from './cards.module.css';
 import { useMovies } from './useMovies';
@@ -23,23 +25,23 @@ export const Cards: FC = () => {
   };
 
   return (
-      <div className={styles.container}>
-        <h1 className={styles.title}>Фильмы-новинки &#62;</h1>
-        {error && <p className={styles.error}>Ошибка: {error}</p>}
-        <div className={styles.slider}>
-          <button onClick={handlePrev} className={styles.prev}>
-            <IoIosArrowBack />
-          </button>
-          <div className={styles.sliderWrapper}>
-            <div
-              className={styles.sliderMove}
-              style={{
-                transform: `translateX(-${currentIndex * CARD_WIDTH}px)`,
-              }}
-            >
-              {movies.map((movie) => (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Фильмы-новинки &#62;</h1>
+      {error && <p className={styles.error}>Ошибка: {error}</p>}
+      <div className={styles.slider}>
+        <button onClick={handlePrev} className={styles.prev}>
+          <IoIosArrowBack />
+        </button>
+        <div className={styles.sliderWrapper}>
+          <div
+            className={styles.sliderMove}
+            style={{
+              transform: `translateX(-${currentIndex * CARD_WIDTH}px)`,
+            }}
+          >
+            {movies.map((movie) => (
+              <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}>
                 <Card
-                  key={movie.id}
                   title={movie.title}
                   rating={movie.rating}
                   year={movie.year}
@@ -49,13 +51,14 @@ export const Cards: FC = () => {
                   category={movie.category}
                   image={movie.image}
                 />
-              ))}
-            </div>
+              </Link>
+            ))}
           </div>
-          <button onClick={handleNext} className={styles.next}>
-            <IoIosArrowForward />
-          </button>
         </div>
+        <button onClick={handleNext} className={styles.next}>
+          <IoIosArrowForward />
+        </button>
       </div>
+    </div>
   );
 };

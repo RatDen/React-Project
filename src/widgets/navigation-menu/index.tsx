@@ -1,4 +1,6 @@
 import styles from './styles.module.css';
+import { NavLink } from 'react-router-dom';
+import { Routes } from '@/shared/config';
 
 export const NavMenu = () => {
   return (
@@ -8,7 +10,7 @@ export const NavMenu = () => {
           <a href='#'>Мой иви</a>
         </li>
         <li>
-          <a href='#'>Фильмы</a>
+          <NavLink to={Routes.MOVIES}>Фильмы</NavLink>
         </li>
         <li>
           <a href='#'>Сериалы</a>
@@ -18,6 +20,9 @@ export const NavMenu = () => {
         </li>
         <li>
           <a href='#'>ТВ</a>
+        </li>
+        <li>
+          <NavLink to={Routes.FAVORITES}>Избранное</NavLink>
         </li>
       </ul>
     </nav>
