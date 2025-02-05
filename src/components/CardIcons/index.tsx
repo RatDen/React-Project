@@ -4,7 +4,7 @@ import { RiShareForwardLine } from 'react-icons/ri';
 import { PiMagicWand } from 'react-icons/pi';
 import { FaRegStar } from 'react-icons/fa';
 import { FaRegEyeSlash } from 'react-icons/fa6';
-import styles from './icons.module.css';
+import styles from './styles.module.css';
 
 interface IconsProps {
   className?: string;

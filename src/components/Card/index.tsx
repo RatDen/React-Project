@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
-import styles from './card.module.css';
-import { Icons } from './Icons';
+import styles from './styles.module.css';
+import { Icons } from '@/components/CardIcons';
 
 const CATEGORY = 'series';
 
