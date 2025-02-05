@@ -16,11 +16,13 @@ import Avatar from './svg/avatar_20.svg';
 import Mail from './svg/email_16.svg';
 import Phone from './svg/call_16.svg';
 import NoAds from './svg/noAds_56.svg';
+import ArrowLeft from './svg/arrowLeft_12x32.svg';
+import ArrowRight from './svg/arrowRight_12x32.svg';
 
 import Search from './svg/search_16.svg?react';
 import Bell from './svg/pull_16.svg?react';
 
 export { Apple, GooglePlay, SmartTv, RuStore, AppGallery, AnyDev };
 export { VK, Odnoklassniki, Twitter, Viber, LinkedIn, Telegram };
-export { Avatar, Mail, Phone, NoAds };
+export { Avatar, Mail, Phone, NoAds, ArrowLeft, ArrowRight };
 export { Search, Bell };

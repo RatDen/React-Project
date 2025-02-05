@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 
-type ActionLinkProps = {
+export type ActionLinkProps = {
   href: string;
   children?: ReactElement | ReactElement[];
   round?: boolean;
