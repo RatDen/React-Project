@@ -32,46 +32,71 @@ export const PromoSlider = ({ content }: PromoSliderProps) => {
   // Следит за переходами на краях
   useEffect(() => {
     if (slide <= 1) {
-      setTimeout(() => {
+      let timeout = setTimeout(() => {
         setTransitionDuration(0);
         setSlide(content.length + 1);
       }, SLIDER_TRANSITION_DURATION);
-      return;
+      return () => {
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+      };
     }
 
     if (slide >= content.length + 2) {
-      setTimeout(() => {
+      let timeout = setTimeout(() => {
         setTransitionDuration(0);
         setSlide(2);
       }, SLIDER_TRANSITION_DURATION);
-      return;
+      return () => {
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+      };
     }
   }, [slide]);
 
   // Включает анимацию после перехода на краях
   useEffect(() => {
     if (transitionDuration === 0) {
-      setTimeout(() => {
+      let timeout = setTimeout(() => {
         setTransitionDuration(SLIDER_TRANSITION_DURATION);
       }, SLIDER_TRANSITION_DURATION);
+      return () => {
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+      };
     }
   }, [transitionDuration]);
 
   const handleScrollSlider = (offset: 1 | -1) => {
     // Убирает возможный скачок при быстром прокликивании
-    transitionDuration === 0
-      ? setTimeout(
-          () => setSlide((slide) => slide + offset),
-          SLIDER_TRANSITION_DURATION
-        )
-      : setSlide((slide) => slide + offset);
+    if (transitionDuration === 0) {
+      let timeout = setTimeout(() => {
+        setSlide((slide) => slide + offset);
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+      }, SLIDER_TRANSITION_DURATION);
+    } else {
+      setSlide((slide) => slide + offset);
+    }
+  };
+
+  const handleScrollLeft = () => {
+    handleScrollSlider(-1);
+  };
+
+  const handleScrollRight = () => {
+    handleScrollSlider(1);
   };
 
   return (
     <div className={styles.slider__container}>
       <div
         className={clsx(styles.slider__button, styles.slider__button_left)}
-        onClick={() => handleScrollSlider(-1)}
+        onClick={handleScrollLeft}
       >
         <img
           src={ArrowLeft}
@@ -84,7 +109,7 @@ export const PromoSlider = ({ content }: PromoSliderProps) => {
       </div>
       <div
         className={clsx(styles.slider__button, styles.slider__button_right)}
-        onClick={() => handleScrollSlider(1)}
+        onClick={handleScrollRight}
       >
         <img
           src={ArrowRight}
