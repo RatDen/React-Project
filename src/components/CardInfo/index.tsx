@@ -1,4 +1,4 @@
-import { useMovies } from './useMovies';
+import { useMovies } from '@/shared/hooks/useMovies';
 
 type Movie = {
   movieId: number;

@@ -4,13 +4,13 @@ import { RiShareForwardLine } from 'react-icons/ri';
 import { PiMagicWand } from 'react-icons/pi';
 import { FaRegStar } from 'react-icons/fa';
 import { FaRegEyeSlash } from 'react-icons/fa6';
-import styles from './icons.module.css';
+import styles from './styles.module.css';
 
-interface IconsProps {
+interface CardIconsProps {
   className?: string;
 }
 
-export const Icons: React.FC<IconsProps> = ({ className }) => {
+export const CardIcons: React.FC<CardIconsProps> = ({ className }) => {
   return (
     <div className={`${styles.icons} ${className || ''}`}>
       <FaRegBookmark title='Буду смотреть' className={styles.icon} />

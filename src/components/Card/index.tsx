@@ -1,6 +1,6 @@
-import React, { FC, useState } from 'react';
-import styles from './card.module.css';
-import { Icons } from './Icons';
+import { FC } from 'react';
+import styles from './styles.module.css';
+import { CardIcons } from '@/components/CardIcons';
 
 const CATEGORY = 'series';
 
@@ -45,7 +45,7 @@ export const Card: FC<CardProps> = ({
             </div>
           </div>
           <div className={styles.rightSide}>
-            <Icons className={styles.icons} />
+            <CardIcons className={styles.icons} />
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
-import { Card } from './Card';
-import styles from './cards.module.css';
-import { useMovies } from './useMovies';
+import { Card } from '@/components/Card';
+import styles from './styles.module.css';
+import { useMovies } from '@/shared/hooks/useMovies';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 
 const CARD_WIDTH = 300;
