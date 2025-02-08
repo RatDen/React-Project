@@ -51,7 +51,7 @@ export const Info = () => {
 
         <div>
           <a href='#'>
-            <h3>ask.ivi.ru</h3>
+            <h3 className={styles.info__article__header}>ask.ivi.ru</h3>
           </a>
           <p>Ответы на вопросы</p>
         </div>

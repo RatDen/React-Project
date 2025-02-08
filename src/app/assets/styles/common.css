@@ -16,11 +16,25 @@
   --color-pale: hsla(0, 0%, 100%, 0.48);
   --color-medium: #d9d7e0;
   --color-accent: var(--accent-color);
-  --color-gradient-main: linear-gradient(-135deg, #c447ff, #ea003d);
-  --color-gradient-reverse: linear-gradient(-45deg, #c447ff, #ea003d);
+  --color-gradient-main: linear-gradient(
+    -45deg,
+    #ea003d 33%,
+    #c447ff 67%,
+    #ea003d
+  );
+  --color-gradient-reverse: linear-gradient(
+    270deg,
+    #ea003d 33%,
+    #c447ff 67%,
+    #ea003d
+  );
   --bg-color: #100e19;
-  --bg-color-interface: #1f1b2e;
-  --bg-color-interface-second: #312b45;
+  --bg-color-ui: #1f1b2e;
+  --bg-color-ui-hover: #2e2844;
+  --bg-color-ui-accent: #312b45;
+
+  --animation-duration-hover-out: 0.4s;
+  --animation-duration-hover-in: 80ms;
 
   color: var(--color-main);
 
@@ -57,9 +71,9 @@ p {
 }
 
 h1 {
-  color: var(--color-main, #fff);
   font-weight: 700;
   font-size: var(--font-size-xl, 56px);
+  line-height: 56px;
 }
 
 h2 {
@@ -97,13 +111,26 @@ button {
   padding: 0;
 }
 
+button:not(:hover):not(:active) {
+  transition-duration: var(--animation-duration-hover-out, 0.4s);
+}
+
+button:hover {
+  transition-duration: var(--animation-duration-hover-in, 80ms);
+}
+
 a {
   color: var(--color-pale, hsla(0, 0%, 100%, 0.48));
   text-decoration: none;
 }
 
+a:not(:hover):not(:active) {
+  transition-duration: var(--animation-duration-hover-out, 0.4s);
+}
+
 a:hover {
   color: var(--color-main, #fff);
+  transition-duration: var(--animation-duration-hover-in, 80ms);
 }
 
 .visually-hidden {
@@ -121,18 +148,35 @@ a:hover {
 
 .special_button {
   background-image: var(
-    --color-gradient-main,
-    linear-gradient(-135deg, #c447ff, #ea003d)
+    --color-gradient-reverse,
+    linear-gradient(270deg, #ea003d 33%, #c447ff 67%, #ea003d)
   );
+  background-position: 50%;
+  background-size: 300%;
+}
+
+.special_button:hover {
+  background-position: 90%;
+  transition-duration: var(--animation-duration-hover-out, 0.4s);
 }
 
 .special_text {
+  position: relative;
   color: transparent;
   background-color: #f30745;
   background-image: var(
-    --color-gradient-reverse,
-    linear-gradient(-45deg, #c447ff, #ea003d)
+    --color-gradient-main,
+    linear-gradient(-45deg, #ea003d 33%, #c447ff 67%, #ea003d)
   );
+  background-position: -5%;
+  background-size: 300%;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.special_text:hover {
+  color: transparent;
+  background-color: #f30745;
+  background-position: -45%;
+  transition-duration: var(--animation-duration-hover-out, 0.4s);
 }

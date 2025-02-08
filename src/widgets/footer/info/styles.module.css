@@ -26,6 +26,15 @@
   padding: 0 25px;
 }
 
+.info__article__header {
+  transition-duration: var(--animation-duration-hover-out, 0.4s);
+}
+
+.info__article__header:hover {
+  color: hsla(0, 0%, 100%, 0.72);
+  transition-duration: var(--animation-duration-hover-in, 80ms);
+}
+
 .promo_widget {
   display: flex;
   justify-content: center;
@@ -33,6 +42,11 @@
   width: 104px;
   border-radius: 20px;
   box-shadow: 0 0 104px #a869f0;
-  background: linear-gradient(180deg, #a869f0 0, #834cc2 100%);
+  background-color: #834cc2;
   aspect-ratio: 1;
+}
+
+.promo_widget:hover {
+  box-shadow: 0 0 104px #ea003d;
+  background-color: #f30745;
 }

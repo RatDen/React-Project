@@ -6,7 +6,11 @@
   border-radius: 12px;
   padding: 9px 15px;
   color: var(--color-main, #fff);
-  background-color: var(--bg-color-interface, #1f1b2e);
+  background-color: var(--bg-color-ui, #1f1b2e);
+}
+
+.link:hover {
+  background-color: var(--bg-color-ui-hover, #2e2844);
 }
 
 .round {
