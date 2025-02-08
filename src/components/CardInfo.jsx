@@ -5,6 +5,14 @@ import { FiPlay } from "react-icons/fi";
 import { FaRegBookmark } from "react-icons/fa";
 import { RiShareForwardLine } from "react-icons/ri";
 
+const title = 'https://thumbs.dfs.ivi.ru/storage5/contents/4/5/fc127f4afc3620ee6b22012e466c37.png/x200/?q=85';
+const authors = [
+		'https://thumbs.dfs.ivi.ru/storage28/contents/a/0/72d786a60d74ffd14c9a1563b33b4f.jpg/128x128/?q=85',
+		'https://thumbs.dfs.ivi.ru/storage8/contents/1/c/a3c9bd71f692936f41b82cedf92344.jpg/128x128/?q=85',
+		'https://thumbs.dfs.ivi.ru/storage8/contents/f/1/0dde0f7cb7ba78200a90c4d4b8b7b6.jpg/128x128/?q=85',
+		'https://thumbs.dfs.ivi.ru/storage26/contents/8/5/ab6f3f649012bea31e44ef8c383982.jpg/128x128/?q=85'
+]
+
 function CardInfo(){
 	return(
 		<>
@@ -13,7 +21,7 @@ function CardInfo(){
 				Тут будет видео :D
 			</div>
 			<div className={styles.info}>
-				<img className={styles.title} src="https://thumbs.dfs.ivi.ru/storage5/contents/4/5/fc127f4afc3620ee6b22012e466c37.png/x200/?q=85" alt="" />
+				<img className={styles.title} src={title} alt="title" />
 				<div className={styles.infoBlock}>
 					<div className={styles.peas}>
 						<p>2016</p>
@@ -39,19 +47,19 @@ function CardInfo(){
 						<p className={styles.actors}>Рейтинг Иви</p>
 					</div>
 					<div className={styles.squers}>
-						<div className={styles.squer} style={{backgroundImage: `url(https://thumbs.dfs.ivi.ru/storage28/contents/a/0/72d786a60d74ffd14c9a1563b33b4f.jpg/128x128/?q=85)`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+						<div className={styles.squer} style={{backgroundImage: `url(${authors[0]})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
 						<p className={styles.actors}>Константин Лавроненко</p>
 					</div>
 					<div className={styles.squers}>
-						<div className={styles.squer} style={{backgroundImage: `url(https://thumbs.dfs.ivi.ru/storage8/contents/1/c/a3c9bd71f692936f41b82cedf92344.jpg/128x128/?q=85)`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+						<div className={styles.squer} style={{backgroundImage: `url(${authors[1]})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
 						<p className={styles.actors}>Мария Миронова</p>
 					</div>
 					<div className={styles.squers}>
-						<div className={styles.squer} style={{backgroundImage: `url(https://thumbs.dfs.ivi.ru/storage8/contents/f/1/0dde0f7cb7ba78200a90c4d4b8b7b6.jpg/128x128/?q=85)`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+						<div className={styles.squer} style={{backgroundImage: `url(${authors[2]})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
 						<p className={styles.actors}>Виктор Степанян</p>
 					</div>
 					<div className={styles.squers}>
-						<div className={styles.squer} style={{backgroundImage: `url(https://thumbs.dfs.ivi.ru/storage26/contents/8/5/ab6f3f649012bea31e44ef8c383982.jpg/128x128/?q=85)`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+						<div className={styles.squer} style={{backgroundImage: `url(${authors[3]})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
 						<p className={styles.actors}>Татев Овакимян</p>
 					</div>
 				</div>
