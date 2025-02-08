@@ -6,3 +6,4 @@ export { Movie } from './Movie';
 export { SignIn } from './SignIn';
 export { SignUp } from './SignUp';
 export { History } from './History';
+export { NotFound } from './NotFound';
