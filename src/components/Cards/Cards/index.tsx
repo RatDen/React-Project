@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
-import { Card } from '@/components/Card';
+import { Card } from '@/components/Cards/Card';
 import styles from './styles.module.css';
 import { useMovies } from '@/shared/hooks/useMovies';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';

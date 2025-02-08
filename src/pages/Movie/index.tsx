@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 
-import { CardInfo } from '@/components/CardInfo';
+import  CardInfo  from '@/components/CardInfo';
 
 export function Movie() {
   const params = useParams<{ id: string }>();
