@@ -6,5 +6,6 @@ export const Routes = {
   SIGNUP: 'signup/',
   HISTORY: 'history/',
   FAVORITES: 'favorites/',
+  SEARCH: 'search/',
   NOT_FOUND: '*',
 } as const;

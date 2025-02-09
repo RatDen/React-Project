@@ -1,0 +1,10 @@
+.search_btn {
+  display: flex;
+  gap: 8px;
+  color: var(--color-pale, hsla(0, 0%, 100%, 0.48));
+  cursor: pointer;
+}
+
+.search_btn:hover {
+  color: var(--color-main, #fff);
+}
