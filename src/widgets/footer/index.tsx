@@ -1,8 +1,5 @@
 import styles from './styles.module.css';
 import clsx from 'clsx';
-import { About, Sections, SideSources, Socials } from './lists';
-import { Mail, NoAds, Phone } from '@/app/assets/images';
-import { ActionLink, ActionButton, SideSourceView } from '@/shared/ui';
 import { Info } from './info';
 import { More } from './more';
 

@@ -7,19 +7,19 @@ export const NavMenu = () => {
     <nav className={styles.menu}>
       <ul className={styles.menu__list}>
         <li>
-          <a href='#'>Мой иви</a>
+          <NavLink to={Routes.ROOT}>Мой иви</NavLink>
         </li>
         <li>
           <NavLink to={Routes.MOVIES}>Фильмы</NavLink>
         </li>
         <li>
-          <a href='#'>Сериалы</a>
+          <NavLink to={Routes.SERIES}>Сериалы</NavLink>
         </li>
         <li>
-          <a href='#'>Мультфильмы</a>
+          <NavLink to={Routes.ANIMATION}>Мультфильмы</NavLink>
         </li>
         <li>
-          <a href='#'>ТВ</a>
+          <NavLink to={Routes.TVPLUS}>ТВ</NavLink>
         </li>
         <li>
           <NavLink to={Routes.FAVORITES}>Избранное</NavLink>

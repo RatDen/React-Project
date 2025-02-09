@@ -1,7 +1,7 @@
 import styles from './style.module.css';
 import clsx from 'clsx';
 import { PromoSliderItem } from './promo-slider-item';
-import { PromoSlide } from '@/shared/types/preview/promo-slider.types';
+import { PromoSlide } from '@/shared/types/promo-slider.types';
 import { useEffect, useMemo, useState } from 'react';
 import { CONTENT_WIDTH, SLIDER_TRANSITION_DURATION } from '@/shared/config';
 import { ArrowLeft, ArrowRight } from '@/app/assets/images';

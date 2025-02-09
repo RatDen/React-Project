@@ -1,8 +1,8 @@
 import styles from './styles.module.css';
-import { PromoSlide } from '@/shared/types/preview/promo-slider.types';
+import clsx from 'clsx';
+import { PromoSlide } from '@/shared/types/promo-slider.types';
 import { Link } from 'react-router';
 import { SlideButton } from './slide-button';
-import clsx from 'clsx';
 
 export type PromoSliderItemProps = {
   slide: PromoSlide;
