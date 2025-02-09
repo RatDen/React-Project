@@ -2,6 +2,9 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+  width: 154px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .cardContainer:hover .card {
   transform: scale(1.02);
@@ -87,6 +90,7 @@
 .name {
   font-size: 12px;
   padding-bottom: 2px;
+  text-overflow: ellipsis;
 }
 .status {
   font-size: 10px;

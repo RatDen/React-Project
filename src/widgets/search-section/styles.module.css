@@ -2,8 +2,9 @@
   padding-top: 72px;
 }
 
-.section_inner {
+.section_input {
   width: var(--content-width);
+  margin-bottom: 32px;
   margin-right: auto;
   margin-left: auto;
 }

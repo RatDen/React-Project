@@ -56,7 +56,7 @@ export function SearchSection() {
 
   return (
     <div className={styles.section_wrapper}>
-      <div className={styles.section_inner}>
+      <div className={styles.section_input}>
         <h1 className={styles.searchInput_title}>Поиск</h1>
         <form className={styles.form}>
           <input
