@@ -1,0 +1,64 @@
+.section_wrapper {
+  padding-top: 72px;
+}
+
+.section_input {
+  width: var(--content-width);
+  margin-bottom: 32px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.searchInput_title {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+  margin-bottom: 32px;
+}
+
+form {
+  position: relative;
+  width: 820px;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid rgba(31, 27, 46, 0.16);
+  background-color: #d9d7e0;
+  border-radius: 12px;
+  height: 40px;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 40px;
+  font-size: 16px;
+  color: #1f1b2e;
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: #a5a1b2;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.input_icon {
+  color: #b3b3b3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: bottom;
+  padding-top: 12px;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+.input_icon:hover {
+  color: grey;
+}

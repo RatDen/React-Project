@@ -11,7 +11,7 @@ export const Layout = () => {
       <main className={styles.main}>
         <div className={styles.main__content}>
           <Outlet />
-					<Cards/>
+          <Cards />
         </div>
       </main>
       <Footer />

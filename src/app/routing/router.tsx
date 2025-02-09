@@ -9,6 +9,8 @@ import {
   SignIn,
   SignUp,
   History,
+  NotFound,
+  Search,
 } from '@/pages';
 import { Routes } from '../../shared/config';
 
@@ -24,6 +26,8 @@ export const router = createBrowserRouter([
       { path: Routes.SIGNUP, element: <SignUp /> },
       { path: Routes.HISTORY, element: <History /> },
       { path: Routes.FAVORITES, element: <Favorites /> },
+      { path: Routes.SEARCH, element: <Search /> },
+      { path: Routes.NOT_FOUND, element: <NotFound /> },
     ],
   },
 ]);
