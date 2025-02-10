@@ -1,4 +1,4 @@
-import { Card } from '@/components/Card';
+import { Card } from '@/components/Cards/Card';
 import { Movie } from '@/shared/hooks/useMovies';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';

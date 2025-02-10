@@ -12,8 +12,5 @@
 .results_cards {
   display: flex;
   flex-wrap: wrap;
-}
-
-.results_item {
-  padding: 0 12px;
+  gap: 24px;
 }

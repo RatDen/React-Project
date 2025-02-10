@@ -11,9 +11,7 @@ import { SearchResults } from './search-results';
 
 export function SearchSection() {
   const inputRef = useRef<HTMLInputElement>(null);
-  //const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams({ query: '' });
-  //const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query') ?? '';
   const debouncedQuery = useDebounce(searchQuery);
 
@@ -24,9 +22,6 @@ export function SearchSection() {
     const foundMovies: Movie[] = movies.filter((movie) =>
       movie.title.toLowerCase().includes(debouncedQuery.toLowerCase())
     );
-    console.log('movies', movies);
-    console.log('foundMovies', foundMovies);
-    console.log('debouncedQuery', debouncedQuery);
     setFoundMovies(foundMovies);
   }, [debouncedQuery, movies]);
 
@@ -73,7 +68,7 @@ export function SearchSection() {
         </form>
       </div>
       {loading && <p className={styles.loading}>Загрузка...</p>}
-      <SearchResults movies={foundMovies} />
+      {searchQuery && <SearchResults movies={foundMovies} />}
     </div>
   );
 }
