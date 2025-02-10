@@ -15,6 +15,7 @@ import {
   LinkedIn,
   Telegram,
 } from '@/app/assets/images';
+import { Routes } from '@/shared/config';
 
 export type SimpleLink = {
   link: string;
@@ -66,31 +67,31 @@ export const About: SimpleLink[] = [
 
 export const Sections: SimpleLink[] = [
   {
-    link: '/',
+    link: Routes.ROOT,
     title: 'Мой Иви',
   },
   {
-    link: '/new',
+    link: Routes.NEW,
     title: 'Что нового',
   },
   {
-    link: '/movies',
+    link: Routes.MOVIES,
     title: 'Фильмы',
   },
   {
-    link: '/series',
+    link: Routes.SERIES,
     title: 'Сериалы',
   },
   {
-    link: '/animation',
+    link: Routes.ANIMATION,
     title: 'Мультфильмы',
   },
   {
-    link: '/tvplus',
+    link: Routes.TVPLUS,
     title: 'ТВ',
   },
   {
-    link: '/goodmovies',
+    link: Routes.GOOD_MOVIES,
     title: 'Что посмотреть',
   },
 ];

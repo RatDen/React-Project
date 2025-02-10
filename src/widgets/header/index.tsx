@@ -22,7 +22,7 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={styles.header__content}>
         <div className={styles.header__content_wrap}>
-          <Link to='/'>
+          <Link to={Routes.ROOT}>
             <Logo />
           </Link>
           <NavMenu />

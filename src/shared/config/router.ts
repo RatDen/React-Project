@@ -10,6 +10,7 @@ export const Routes = {
   PROFILE_PAYMENTS: '/profile/payments',
   PROFILE_CHECKS: '/profile/checks',
   PROFILE_SETTINGS: '/profile/settings',
+  PROFILE_SUPPORT: '/profile?support_chat=true',
   MOVIES: '/movies',
   MOVIE: '/movies/:id',
   SERIES: '/series',
@@ -19,10 +20,14 @@ export const Routes = {
   SIGNUP: '/signup',
   HISTORY: '/history',
   FAVORITES: '/favorites',
+  NEW: '/new',
+  GOOD_MOVIES: '/goodmovies',
+  CERT: '/cert',
   NOT_FOUND: '*',
 } as const;
 
 export const ExternalLinks = {
+  MAIL_TO: 'mailto:support@ivi.ru',
   SUPPORT: 'https://ask.ivi.ru',
   CERTIFICATE_SHARE: 'https://widget.mgc-loyalty.ru/iviru/landing',
 } as const;

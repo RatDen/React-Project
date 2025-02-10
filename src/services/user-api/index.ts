@@ -7,6 +7,7 @@ import {
 } from '@/shared/libs/utils';
 import { UserLoginData, UserLoginResponce } from './user-api.types';
 import { User } from '@/shared/types/user.types';
+import { Endpoints } from '@/shared/config';
 
 export const userApi = createApi({
   reducerPath: 'userApi',
@@ -24,7 +25,7 @@ export const userApi = createApi({
   endpoints: (build) => ({
     UserLogin: build.mutation<User, UserLoginData>({
       query: (body) => ({
-        url: `auth/login`,
+        url: Endpoints.AUTH_LOGIN,
         method: 'POST',
         body: body,
       }),

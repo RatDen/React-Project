@@ -1,5 +1,6 @@
 import styles from './styles.module.css';
 import { Notification, Support } from '@/app/assets/images';
+import { ExternalLinks, Routes } from '@/shared/config';
 import { SubscriptionsLink, CertificateButton, Uid } from '@/widgets';
 import { Link } from 'react-router';
 
@@ -9,11 +10,11 @@ export const PromoBlock = () => {
       <SubscriptionsLink />
       <CertificateButton />
       <div className={styles.info}>
-        <Link to='notifications'>
+        <Link to={Routes.PROFILE_NOTIFICATIONS}>
           <img src={Notification} alt='Колокол' className={styles.info__icon} />
           <p>Уведомления</p>
         </Link>
-        <a href='https://ask.ivi.ru/'>
+        <a href={ExternalLinks.SUPPORT}>
           <img src={Support} alt='Наушники' className={styles.info__icon} />
           <p>Помощь</p>
         </a>

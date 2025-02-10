@@ -6,6 +6,7 @@ import { userApi } from '@/services';
 import { FIXED_CACHE_KEY_USER } from '@/shared/config/api';
 import { deleteLocalUser } from '@/shared/libs/utils';
 import { useNavigate } from 'react-router-dom';
+import { Routes } from '@/shared/config'
 
 export const ProfileModule = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export const ProfileModule = () => {
   const handleExit = () => {
     deleteLocalUser();
     reset();
-    navigate('/');
+    navigate(Routes.ROOT);
   };
 
   return (

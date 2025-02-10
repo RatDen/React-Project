@@ -4,6 +4,7 @@ import { About, Sections } from '../lists';
 import { ActionLink, ActionButton, ActionLinkExternal } from '@/shared/ui';
 import { Mail, NoAds, Phone } from '@/app/assets/images';
 import { Link } from 'react-router';
+import {ExternalLinks, Routes} from '@/shared/config'
 
 export const Info = () => {
   return (
@@ -25,7 +26,7 @@ export const Info = () => {
             </li>
           ))}
           <li key='special'>
-            <Link to='/cert' className='special_text'>
+            <Link to={Routes.CERT} className='special_text'>
               Активация сертификата
             </Link>
           </li>
@@ -36,12 +37,12 @@ export const Info = () => {
 
         <div className={styles.button_group}>
           <div className={styles.button_group_wrap}>
-            <ActionLink href='/profile?support_chat=true'>
+            <ActionLink href={Routes.PROFILE_SUPPORT}>
               <p className={styles.chat_button__text}>Написать в чате</p>
             </ActionLink>
           </div>
           <div className={styles.button_group_wrap}>
-            <ActionLinkExternal href='mailto:support@ivi.ru' square>
+            <ActionLinkExternal href={ExternalLinks.MAIL_TO} square>
               <img src={Mail} alt='mail' />
             </ActionLinkExternal>
             <ActionButton square>
@@ -51,7 +52,7 @@ export const Info = () => {
         </div>
 
         <div>
-          <a href='https://ask.ivi.ru/'>
+          <a href={ExternalLinks.SUPPORT}>
             <h3 className={styles.info__article__header}>ask.ivi.ru</h3>
           </a>
           <p>Ответы на вопросы</p>
