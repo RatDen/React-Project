@@ -1,18 +1,22 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
 import { Card } from '@/components/Cards/Card';
 import styles from './styles.module.css';
-import { useMovies } from '@/shared/hooks/useMovies';
+
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
+import { useGetMoviesQuery } from '@/features/movies/moviesApiSlice';
 
 const CARD_WIDTH = 300;
 
 export const Cards: FC = () => {
-  const { movies, error, loading } = useMovies();
+  let { data: movies, isLoading, isError } = useGetMoviesQuery({});
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  if (loading) {
+  movies = movies?.slice(10);
+  const moviesLength = movies?.length || 1;
+
+  if (isLoading) {
     return <p className={styles.loading}>Загрузка...</p>;
   }
 
@@ -21,13 +25,13 @@ export const Cards: FC = () => {
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, movies.length - 1));
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, moviesLength - 1));
   };
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Фильмы-новинки &#62;</h1>
-      {error && <p className={styles.error}>Ошибка: {error}</p>}
+      {isError && <p className={styles.error}>Ошибка: {isError}</p>}
       <div className={styles.slider}>
         <button onClick={handlePrev} className={styles.prev}>
           <IoIosArrowBack />
@@ -39,20 +43,27 @@ export const Cards: FC = () => {
               transform: `translateX(-${currentIndex * CARD_WIDTH}px)`,
             }}
           >
-            {movies.map((movie) => (
-              <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}>
-                <Card
-                  title={movie.title}
-                  rating={movie.rating}
-                  year={movie.year}
-                  country={movie.country}
-                  duration={movie.duration}
-                  genre={movie.genre}
-                  category={movie.category}
-                  image={movie.image}
-                />
-              </Link>
-            ))}
+            {movies &&
+              movies.map((movie) => (
+                <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}>
+                  <Card
+                    title={movie.primaryTitle}
+                    image={movie.primaryImage}
+                    rating={movie.averageRating || undefined}
+                    year={
+                      movie.releaseDate
+                        ? Number(movie.releaseDate.split('-')[0])
+                        : undefined
+                    }
+                    country={
+                      movie.countriesOfOrigin ? movie.countriesOfOrigin[0] : ''
+                    }
+                    duration={movie.runtimeMinutes || undefined}
+                    genre={movie.genres ? movie.genres[0] : ''}
+                    category={movie.type || 'Фильм'}
+                  />
+                </Link>
+              ))}
           </div>
         </div>
         <button onClick={handleNext} className={styles.next}>

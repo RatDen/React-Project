@@ -5,9 +5,10 @@ import styles from './styles.module.css';
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { Movie, useMovies } from '@/shared/hooks/useMovies';
+import { useSearchMoviesQuery } from '@/features/movies/moviesApiSlice';
 import { useDebounce } from '@/shared/hooks/useDebounce';
 import { SearchResults } from './search-results';
+import { Movie } from '@/shared/types/movie.types';
 
 export function SearchSection() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -15,15 +16,11 @@ export function SearchSection() {
   const searchQuery = searchParams.get('query') ?? '';
   const debouncedQuery = useDebounce(searchQuery);
 
-  const { movies, error, loading } = useMovies();
-  const [foundMovies, setFoundMovies] = useState<Movie[]>([]);
-
-  useEffect(() => {
-    const foundMovies: Movie[] = movies.filter((movie) =>
-      movie.title.toLowerCase().includes(debouncedQuery.toLowerCase())
-    );
-    setFoundMovies(foundMovies);
-  }, [debouncedQuery, movies]);
+  const {
+    data: movies,
+    isLoading,
+    isError,
+  } = useSearchMoviesQuery(debouncedQuery);
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearchParams(
@@ -67,8 +64,9 @@ export function SearchSection() {
           </div>
         </form>
       </div>
-      {loading && <p className={styles.loading}>Загрузка...</p>}
-      {searchQuery && <SearchResults movies={foundMovies} />}
+      {isLoading && <p className={styles.loading}>Загрузка...</p>}
+      {isError && <p>Ошибка на стороне сервера. Мы уже чиним.</p>}
+      {searchQuery && movies && <SearchResults movies={movies} />}
     </div>
   );
 }

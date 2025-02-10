@@ -1,8 +1,8 @@
 import { Card } from '@/components/Cards/Card';
-import { Movie } from '@/shared/hooks/useMovies';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
 import styles from './styles.module.css';
+import { Movie } from '@/shared/types/movie.types';
 
 type typeProps = {
   movies: Movie[];
@@ -17,14 +17,20 @@ export function SearchResults({ movies }: typeProps) {
           <li className={styles.results_item} key={movie.id}>
             <Link to={`${Routes.MOVIES}${movie.id}`}>
               <Card
-                title={movie.title}
-                rating={movie.rating}
-                year={movie.year}
-                country={movie.country}
-                duration={movie.duration}
-                genre={movie.genre}
-                category={movie.category}
-                image={movie.image}
+                title={movie.primaryTitle}
+                image={movie.primaryImage}
+                rating={movie.averageRating || undefined}
+                year={
+                  movie.releaseDate
+                    ? Number(movie.releaseDate.split('-')[0])
+                    : undefined
+                }
+                country={
+                  movie.countriesOfOrigin ? movie.countriesOfOrigin[0] : ''
+                }
+                duration={movie.runtimeMinutes || undefined}
+                genre={movie.genres ? movie.genres[0] : ''}
+                category={movie.type || 'Фильм'}
               />
             </Link>
           </li>

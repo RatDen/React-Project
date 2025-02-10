@@ -6,13 +6,13 @@ const CATEGORY = 'series';
 
 export interface CardProps {
   title: string;
-  rating: number;
-  year: number;
-  country: string;
-  duration: number;
-  genre: string;
-  category: string;
   image: string;
+  rating?: number;
+  year?: number;
+  country?: string;
+  duration?: number;
+  genre?: string;
+  category?: string;
 }
 
 export const Card: FC<CardProps> = ({
@@ -50,13 +50,6 @@ export const Card: FC<CardProps> = ({
         </div>
       </div>
       <h3 className={styles.name}>{title}</h3>
-      {category === CATEGORY ? (
-        <h4 className={styles.status} style={{ color: 'red' }}>
-          Подписка
-        </h4>
-      ) : (
-        <h4 className={styles.status}>Бесплатно</h4>
-      )}
     </div>
   );
 };
