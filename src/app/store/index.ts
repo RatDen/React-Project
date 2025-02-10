@@ -1,9 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import type { TypedUseSelectorHook } from 'react-redux';
+import moviesReducer from './moviesSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    movies: moviesReducer,
+  },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
