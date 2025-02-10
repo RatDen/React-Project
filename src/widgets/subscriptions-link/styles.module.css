@@ -1,0 +1,17 @@
+.button_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 46px;
+}
+
+.button_content__text_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.button_content__text {
+  color: #7e798f;
+}

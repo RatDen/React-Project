@@ -40,13 +40,16 @@
   justify-content: center;
   align-items: center;
   width: 104px;
+  border: none;
   border-radius: 20px;
   box-shadow: 0 0 104px #a869f0;
   background-color: #834cc2;
+  transition: var(--animation-duration-hover-out, 0.4s);
   aspect-ratio: 1;
 }
 
 .promo_widget:hover {
   box-shadow: 0 0 104px #ea003d;
   background-color: #f30745;
+  transition: var(--animation-duration-hover-in, 80ms);
 }

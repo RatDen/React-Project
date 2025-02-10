@@ -1,0 +1,53 @@
+.container {
+  display: grid;
+  grid-template-columns: 3fr 3fr 2fr;
+  gap: 24px;
+}
+
+.container button,
+.container a {
+  justify-content: flex-start;
+  height: auto;
+  padding: 16px;
+}
+
+.button_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 46px;
+}
+
+.button_content__text_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.button_content__text {
+  color: #7e798f;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.info a {
+  display: flex;
+  gap: 6px;
+  padding: 0;
+  color: #a5a1b2;
+}
+
+.info a:hover {
+  color: var(--color-accent, #f30745);
+}
+
+.info__icon {
+  width: 16px;
+  aspect-ratio: 1;
+}

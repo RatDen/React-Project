@@ -1,6 +1,7 @@
 import styles from './styles.module.css';
-import { ReactElement } from 'react';
 import clsx from 'clsx';
+import { ReactElement } from 'react';
+import { Link } from 'react-router';
 
 export type ActionLinkProps = {
   href: string;
@@ -16,8 +17,8 @@ export const ActionLink = ({
   square = false,
 }: ActionLinkProps) => {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className={clsx(
         styles.link,
         round ? styles.round : '',
@@ -25,6 +26,6 @@ export const ActionLink = ({
       )}
     >
       {children}
-    </a>
+    </Link>
   );
 };

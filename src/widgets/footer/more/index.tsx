@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { ActionLink, SideSourceView } from '@/shared/ui';
+import { ActionLinkExternal, SideSourceView } from '@/shared/ui';
 import { SideSources, Socials } from '../lists';
 
 export const More = () => {
@@ -8,9 +8,9 @@ export const More = () => {
       <ul className={styles.container__block}>
         {SideSources.map(({ link, image, alt, title, text }, index) => (
           <li key={index}>
-            <ActionLink href={link}>
+            <ActionLinkExternal href={link}>
               <SideSourceView img={image} alt={alt} title={title} text={text} />
-            </ActionLink>
+            </ActionLinkExternal>
           </li>
         ))}
       </ul>
@@ -18,9 +18,9 @@ export const More = () => {
       <ul className={styles.container__block}>
         {Socials.map(({ link, image, alt }, index) => (
           <li key={index}>
-            <ActionLink href={link} round>
+            <ActionLinkExternal href={link} round>
               <img src={image} alt={alt} className={styles.socials__image} />
-            </ActionLink>
+            </ActionLinkExternal>
           </li>
         ))}
       </ul>

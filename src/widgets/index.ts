@@ -1,2 +1,9 @@
-export { Header } from './header';
-export { Footer } from './footer';
+export * from './avatar';
+export * from './certificate-button';
+export * from './footer';
+export * from './header';
+export * from './modal-login';
+export * from './navigation-menu';
+export * from './share-subscribe-button';
+export * from './subscriptions-link';
+export * from './uid';

@@ -11,11 +11,11 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-  --accent-color: #f30745;
   --color-main: #fff;
   --color-pale: hsla(0, 0%, 100%, 0.48);
   --color-medium: #d9d7e0;
-  --color-accent: var(--accent-color);
+  --color-accent: #f30745;
+  --color-accent-hover: #f9255d;
   --color-gradient-main: linear-gradient(
     -45deg,
     #ea003d 33%,
@@ -133,6 +133,10 @@ a:hover {
   transition-duration: var(--animation-duration-hover-in, 80ms);
 }
 
+a.active {
+  color: var(--color-accent, #f30745);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -179,4 +183,8 @@ a:hover {
   background-color: #f30745;
   background-position: -45%;
   transition-duration: var(--animation-duration-hover-out, 0.4s);
+}
+
+.overflow_hidden {
+  overflow: hidden;
 }

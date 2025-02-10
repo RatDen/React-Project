@@ -23,6 +23,7 @@
 }
 
 .slide_active.slide__container::before {
+  z-index: 1;
   background-color: transparent;
 }
 

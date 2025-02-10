@@ -1,0 +1,33 @@
+.button_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 46px;
+}
+
+.button__background {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: right top / contain no-repeat
+    url('/src/app/assets/images/png/cake.png');
+}
+
+.button_content__icon {
+  width: 28px;
+  border-radius: 6px;
+  background-color: var(--color-accent, #f30745);
+  aspect-ratio: 1;
+}
+
+.button_content__text_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.button_content__text {
+  color: #7e798f;
+}
