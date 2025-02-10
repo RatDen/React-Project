@@ -184,3 +184,7 @@ a.active {
   background-position: -45%;
   transition-duration: var(--animation-duration-hover-out, 0.4s);
 }
+
+.overflow_hidden {
+  overflow: hidden;
+}

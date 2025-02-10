@@ -1,20 +1,20 @@
 import styles from './styles.module.css';
-import { useState } from 'react';
-import { createPortal } from 'react-dom';
+import { useRef, useState } from 'react';
 import { Qr, Device } from '@/app/assets/images';
 import { ActionButton } from '@/shared/ui';
 import { ModalLogin } from '@/widgets/modal-login';
 
 export const LoginBlock = () => {
   const [modal, setModal] = useState(false);
+  const root = useRef(document.body)
 
   const handleOpenModal = () => {
-    document.body.style.overflow = 'hidden';
+    root.current?.classList.add('overflow_hidden')
     setModal(true);
   };
 
   const handleCloseModal = () => {
-    document.body.style.overflow = '';
+    root.current?.classList.remove('overflow_hidden')
     setModal(false);
   };
 
@@ -42,11 +42,7 @@ export const LoginBlock = () => {
         </ActionButton>
       </div>
 
-      {modal &&
-        createPortal(
-          <ModalLogin close={handleCloseModal} />,
-          document.getElementById('modal')!
-        )}
+      <ModalLogin isOpen={modal} close={handleCloseModal} />
     </div>
   );
 };
