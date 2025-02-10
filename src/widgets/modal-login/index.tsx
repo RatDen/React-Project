@@ -5,14 +5,12 @@ import { userApi } from '@/services';
 import { FieldValues, useForm } from 'react-hook-form';
 import ReactLoading from 'react-loading';
 import { FIXED_CACHE_KEY_USER } from '@/shared/config/api';
-import { createPortal } from 'react-dom';
 
 export type ModalLoginProps = {
-  isOpen: boolean;
   close: () => void;
 };
 
-export const ModalLogin = ({ isOpen, close }: ModalLoginProps) => {
+export const ModalLogin = ({ close }: ModalLoginProps) => {
   const [login, { isLoading }] = userApi.useUserLoginMutation({
     fixedCacheKey: FIXED_CACHE_KEY_USER,
   });
@@ -33,73 +31,66 @@ export const ModalLogin = ({ isOpen, close }: ModalLoginProps) => {
   };
 
   return (
-    <>
-      {isOpen &&
-        createPortal(
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <h2>Вход или регистрация</h2>
-              <button onClick={close} className={styles.button_close}>
-                <Close />
-              </button>
-            </div>
-            <div className={styles.content}>
-              <div className={styles.content_container}>
-                <form className={styles.form_login}>
-                  <FormInput
-                    type='email'
-                    placeholder='Введите email'
-                    icon={Avatar}
-                    error={errors.email?.message as string}
-                    {...register('email', {
-                      required: {
-                        value: true,
-                        message: 'Это обязательное поле',
-                      },
-                      pattern: {
-                        value:
-                          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                        message: 'Введите корректный email',
-                      },
-                    })}
-                  />
-                  <FormInput
-                    type='password'
-                    placeholder='Введите пароль'
-                    icon={Password}
-                    error={errors.password?.message as string}
-                    {...register('password', {
-                      required: {
-                        value: true,
-                        message: 'Это обязательное поле',
-                      },
-                      minLength: {
-                        value: 5,
-                        message: 'Минимум 5 символов',
-                      },
-                    })}
-                  />
-                  <ActionButton
-                    accent
-                    disabled={!isValid}
-                    onClick={handleSubmit(onSubmit)}
-                  >
-                    <p>Продолжить</p>
-                  </ActionButton>
-                </form>
-                {isLoading && (
-                  <ReactLoading
-                    type='spin'
-                    color='#f30745'
-                    height='40px'
-                    width='40px'
-                  />
-                )}
-              </div>
-            </div>
-          </div>,
-          document.getElementById('modal')!
-        )}
-    </>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h2>Вход или регистрация</h2>
+        <button onClick={close} className={styles.button_close}>
+          <Close />
+        </button>
+      </div>
+      <div className={styles.content}>
+        <div className={styles.content_container}>
+          <form className={styles.form_login}>
+            <FormInput
+              type='email'
+              placeholder='Введите email'
+              icon={Avatar}
+              error={errors.email?.message as string}
+              {...register('email', {
+                required: {
+                  value: true,
+                  message: 'Это обязательное поле',
+                },
+                pattern: {
+                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                  message: 'Введите корректный email',
+                },
+              })}
+            />
+            <FormInput
+              type='password'
+              placeholder='Введите пароль'
+              icon={Password}
+              error={errors.password?.message as string}
+              {...register('password', {
+                required: {
+                  value: true,
+                  message: 'Это обязательное поле',
+                },
+                minLength: {
+                  value: 5,
+                  message: 'Минимум 5 символов',
+                },
+              })}
+            />
+            <ActionButton
+              accent
+              disabled={!isValid}
+              onClick={handleSubmit(onSubmit)}
+            >
+              <p>Продолжить</p>
+            </ActionButton>
+          </form>
+          {isLoading && (
+            <ReactLoading
+              type='spin'
+              color='#f30745'
+              height='40px'
+              width='40px'
+            />
+          )}
+        </div>
+      </div>
+    </div>
   );
 };

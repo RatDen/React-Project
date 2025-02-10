@@ -4,7 +4,7 @@ import { About, Sections } from '../lists';
 import { ActionLink, ActionButton, ActionLinkExternal } from '@/shared/ui';
 import { Mail, NoAds, Phone } from '@/app/assets/images';
 import { Link } from 'react-router';
-import {ExternalLinks, Routes} from '@/shared/config'
+import { ExternalLinks, Routes } from '@/shared/config';
 
 export const Info = () => {
   return (

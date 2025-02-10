@@ -1,3 +1,3 @@
 export const Endpoints = {
-  AUTH_LOGIN: 'auth/login'
-} as const
+  AUTH_LOGIN: 'auth/login',
+} as const;

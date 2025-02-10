@@ -3,18 +3,19 @@ import { useRef, useState } from 'react';
 import { Qr, Device } from '@/app/assets/images';
 import { ActionButton } from '@/shared/ui';
 import { ModalLogin } from '@/widgets/modal-login';
+import { PortalModals } from '@/shared/ui';
 
 export const LoginBlock = () => {
   const [modal, setModal] = useState(false);
-  const root = useRef(document.body)
+  const root = useRef(document.body);
 
   const handleOpenModal = () => {
-    root.current?.classList.add('overflow_hidden')
+    root.current?.classList.add('overflow_hidden');
     setModal(true);
   };
 
   const handleCloseModal = () => {
-    root.current?.classList.remove('overflow_hidden')
+    root.current?.classList.remove('overflow_hidden');
     setModal(false);
   };
 
@@ -42,7 +43,11 @@ export const LoginBlock = () => {
         </ActionButton>
       </div>
 
-      <ModalLogin isOpen={modal} close={handleCloseModal} />
+      {modal && (
+        <PortalModals>
+          <ModalLogin close={handleCloseModal} />
+        </PortalModals>
+      )}
     </div>
   );
 };
