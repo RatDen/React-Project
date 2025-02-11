@@ -25,14 +25,9 @@ export const Cards = ({ title, data }: CardsProps) => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // if (isLoading) {
-  //   return <p className={styles.loading}>Загрузка...</p>;
-  // }
-
   return (
     <section className={styles.cardsContainer}>
       <h2 className={styles.title}>{title}</h2>
-      {/* {isError && <p className={styles.error}>Ошибка: {isError}</p>} */}
 
       <div className={styles.embla}>
         <div className={styles.embla__viewport} ref={emblaRef}>

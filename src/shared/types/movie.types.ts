@@ -7,7 +7,8 @@ export interface Movie {
   averageRating?: number;
   releaseDate?: string;
   runtimeMinutes?: number | null;
-  genres?: string[];
+  genres?: string[] | null;
   contentRating?: string;
   countriesOfOrigin?: string[];
+  isAdult?: boolean;
 }

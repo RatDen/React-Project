@@ -1,17 +1,16 @@
-/* working styles */
 .firstScreen {
-  height: 614px; /*  change */
+  height: 614px;
+  margin: 28px auto;
 }
 
 .firstScreenWrapper {
   position: relative;
   display: flex;
-
   gap: 48px;
 }
 
 .firstScreen_img {
-  width: 500px;
+  width: 410px;
 }
 
 .firstScreen_info {
@@ -48,37 +47,6 @@
   font-weight: 700;
 }
 
-.metaInfo_genres {
-  margin-top: 8px;
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 8px;
-
-  overflow: hidden;
-}
-
-.metaInfo_genres__items {
-  display: inline-flex;
-  padding: 2px 6px;
-  background-color: hsla(0, 0%, 100%, 0.16);
-  backdrop-filter: blur(0);
-  align-items: center;
-  border-radius: 4px;
-}
-
-.metaInfo_genres__items > span {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 16px;
-  margin-top: 0;
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .metaInfo_synopsis {
   margin-top: 16px;
   font-size: 15px;
@@ -95,58 +63,6 @@
   gap: 0 8px;
 }
 
-.buySubscription {
-  background-color: #f30745;
-  text-align: center;
-  border-radius: 16px;
-  height: 48px;
-  width: 288px;
-  padding: 2px 4px;
-
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.buySubscription:hover {
-  background-color: #f9255d;
-  transition-duration: 80ms;
-}
-
-.buySubscription_primaryText {
-  color: #fff;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.buySubscription_secondaryText {
-  color: hsla(0, 0%, 100%, 0.72);
-  white-space: nowrap;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-}
-
-.iconWrapper {
-  background-color: hsla(0, 0%, 100%, 0.08);
-  height: 48px;
-  border-radius: 16px;
-  padding: 13px 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.iconWrapper:hover {
-  background-color: rgba(255, 255, 255, 0.16);
-  cursor: pointer;
-}
-
 .noteText {
   position: absolute;
   margin-top: 8px;
@@ -156,10 +72,12 @@
 }
 
 .moreDetails {
-  margin-top: 28px;
+  margin-top: 34px;
 }
 
 .moreDetails_title {
+  margin-top: 14px;
+  margin-bottom: 12px;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
 }
