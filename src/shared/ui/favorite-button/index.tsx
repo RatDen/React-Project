@@ -1,12 +1,16 @@
-import { FavoriteIcon } from '@/app/assets/images';
+import { FavoriteIcon, FavoriteRemove } from '@/app/assets/images';
 import styles from './styles.module.css';
 
-export const FavBtn = () => (
-  <div className={styles.favorite}>
+interface FavBtnProps {
+  isFavorite: boolean;
+}
+
+export const FavBtn: React.FC<FavBtnProps> = ({ isFavorite, onClick }) => (
+  <div className={styles.favorite} onClick={onClick}>
     <div className={styles.iconWrapper}>
       <img
         className={styles.favIconImg}
-        src={FavoriteIcon}
+        src={isFavorite ? FavoriteRemove: FavoriteIcon}
         alt='Add to favorites'
       />
     </div>

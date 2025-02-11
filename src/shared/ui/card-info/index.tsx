@@ -1,14 +1,25 @@
 import { getYear } from '@/shared/utils/helperFunctions';
 import styles from './styles.module.css';
-
+import { useAppDispatch, useAppSelector } from '@/app/store';
+import { toggleFavorite } from '@/services/favoriteSlice';
 import { Movie } from '@/shared/types/movie.types';
 import { ActionWatch, FavBtn, MoviePills, ShareBtn } from '@/shared/ui';
 
 export interface CardInfoProps {
   movie: Movie;
+	id: string;
 }
 
-export const CardInfo = ({ movie }: CardInfoProps) => {
+export const CardInfo = ({ movie, id }: CardInfoProps) => {
+  const dispatch = useAppDispatch();
+  const favorites = useAppSelector((state) => state.favorite.favorites);
+
+  const isFavorite = favorites.includes(id);
+
+  const handleToggle = () => {
+    dispatch(toggleFavorite(id));
+  };
+
   return (
     <section className={styles.firstScreen}>
       <div className={styles.firstScreenWrapper}>
@@ -42,7 +53,7 @@ export const CardInfo = ({ movie }: CardInfoProps) => {
             <div className={styles.metaInfo_monetization}>
               <div className={styles.metaInfo_buttons}>
                 <ActionWatch />
-                <FavBtn />
+                <FavBtn isFavorite={isFavorite} onClick={handleToggle}/>
                 <ShareBtn />
               </div>
               <div className={styles.noteText}>

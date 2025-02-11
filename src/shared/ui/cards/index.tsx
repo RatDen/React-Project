@@ -36,6 +36,7 @@ export const Cards = ({ title, data }: CardsProps) => {
                 <li className={styles.embla__slide} key={movie.id}>
                   <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}>
                     <Card
+											id={movie.id}
                       title={movie.primaryTitle}
                       image={movie.primaryImage}
                       rating={movie.averageRating || undefined}

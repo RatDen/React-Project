@@ -42,6 +42,7 @@ import Exit from './svg/exit_16.svg';
 
 import SearchIcon from './svg/search_16.svg?react';
 import FavoriteIcon from './svg/favorite_16.svg';
+import FavoriteRemove from './svg/favoriteRemove_20.svg';
 import ShareIcon from './svg/share_16.svg';
 import Bell from './svg/pull_16.svg?react';
 import Close from './svg/close_20.svg?react';
@@ -83,5 +84,5 @@ export {
   Ivi,
   Exit,
 };
-export { SearchIcon, Bell, Close, NotFound404, FavoriteIcon, ShareIcon };
+export { SearchIcon, Bell, Close, NotFound404, FavoriteIcon, FavoriteRemove, ShareIcon };
 export { Qr };
