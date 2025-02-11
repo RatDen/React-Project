@@ -26,6 +26,19 @@ export const Cards: FC = () => {
     setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, movies.length - 1));
   };
 
+  const movieCards = movies.map((movie) => ({
+    id: movie.id,
+    link: `${Routes.MOVIES}${movie.id}`,
+    title: movie.media.title,
+    rating: movie.ratings.imdb.score,
+    year: movie.media.release_date.slice(0, 4),
+    country: movie.media.origin_country,
+    duration: movie.media.runtime,
+    genre: movie.media.genres[0]?.name || 'Неизвестно', // Добавил fallback
+    category: movie.media.media_type,
+    image: `https://image.tmdb.org/t/p/w500${movie.media.poster_path}`,
+  }));
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Фильмы-новинки &#62;</h1>
@@ -40,21 +53,33 @@ export const Cards: FC = () => {
               transform: `translateX(-${currentIndex * CARD_WIDTH}px)`,
             }}
           >
-            {movies.map((movie) => (
-              <>
-                <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}></Link>
-                <Card
-                  title={movie.media.title}
-                  rating={movie.ratings.imdb.score}
-                  year={movie.media.release_date.slice(0, 4)}
-                  country={movie.media.origin_country}
-                  duration={movie.media.runtime}
-                  genre={movie.media.genres[0].name}
-                  category={movie.media.media_type}
-                  image={`https://image.tmdb.org/t/p/w500${movie.media.poster_path}`}
-                />
-              </>
-            ))}
+            {movieCards.map(
+              ({
+                id,
+                link,
+                title,
+                rating,
+                year,
+                country,
+                duration,
+                genre,
+                category,
+                image,
+              }) => (
+                <Link to={link} key={id}>
+                  <Card
+                    title={title}
+                    rating={rating}
+                    year={year}
+                    country={country}
+                    duration={duration}
+                    genre={genre}
+                    category={category}
+                    image={image}
+                  />
+                </Link>
+              )
+            )}
           </div>
         </div>
         <button onClick={handleNext} className={styles.next}>
