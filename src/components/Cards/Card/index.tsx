@@ -10,7 +10,7 @@ export interface CardProps {
   rating?: number;
   year?: number;
   country?: string;
-  duration?: number;
+  duration?: number | '';
   genre?: string;
   category?: string;
 }

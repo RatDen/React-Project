@@ -2,13 +2,12 @@ import { VscChromeClose } from 'react-icons/vsc';
 import { LuSearch } from 'react-icons/lu';
 
 import styles from './styles.module.css';
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { useSearchMoviesQuery } from '@/features/movies/moviesApiSlice';
 import { useDebounce } from '@/shared/hooks/useDebounce';
 import { SearchResults } from './search-results';
-import { Movie } from '@/shared/types/movie.types';
 
 export function SearchSection() {
   const inputRef = useRef<HTMLInputElement>(null);

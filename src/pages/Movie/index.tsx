@@ -1,13 +1,34 @@
 import { useParams } from 'react-router-dom';
-
-import CardInfo from '@/components/CardInfo';
+import { useGetSingleMovieQuery } from '@/features/movies/moviesApiSlice';
+import { invariant } from '@/shared/utils/helperFunctions';
+import { NotFoundInfo } from '@/widgets/not-found';
+import { CardInfo } from '@/components/CardInfo';
 
 export function Movie() {
-  const params = useParams<{ id: string }>();
+  const { id } = useParams<{ id: string }>();
 
-  if (!params.id) {
-    return <div>Movie ID is missing</div>;
+  try {
+    invariant(id);
+  } catch (error) {
+    console.log(error);
+    return <NotFoundInfo />;
   }
 
-  return <CardInfo movieId={Number(params.id)} />;
+  const { data: movie, isLoading, isError } = useGetSingleMovieQuery(id);
+
+  if (isLoading) {
+    return <p>Загрузка...</p>;
+  }
+
+  if (isError) {
+    return (
+      <>
+        Случилась ошибка при выполнении запроса.
+        <br />
+        Проверьте подключение к интернету или зайдите позже.
+      </>
+    );
+  } else {
+    return movie ? <div>{<CardInfo movie={movie} />}</div> : <NotFoundInfo />;
+  }
 }

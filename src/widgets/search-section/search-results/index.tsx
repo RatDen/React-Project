@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
 import styles from './styles.module.css';
 import { Movie } from '@/shared/types/movie.types';
+import { getYear } from '@/shared/utils/helperFunctions';
 
 type typeProps = {
   movies: Movie[];
@@ -20,15 +21,11 @@ export function SearchResults({ movies }: typeProps) {
                 title={movie.primaryTitle}
                 image={movie.primaryImage}
                 rating={movie.averageRating || undefined}
-                year={
-                  movie.releaseDate
-                    ? Number(movie.releaseDate.split('-')[0])
-                    : undefined
-                }
+                year={getYear(movie.releaseDate)}
                 country={
                   movie.countriesOfOrigin ? movie.countriesOfOrigin[0] : ''
                 }
-                duration={movie.runtimeMinutes || undefined}
+                duration={movie.runtimeMinutes || ''}
                 genre={movie.genres ? movie.genres[0] : ''}
                 category={movie.type || 'Фильм'}
               />

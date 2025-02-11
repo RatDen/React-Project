@@ -20,6 +20,8 @@ import ArrowLeft from './svg/arrowLeft_12x32.svg';
 import ArrowRight from './svg/arrowRight_12x32.svg';
 
 import SearchIcon from './svg/search_16.svg?react';
+import FavoriteIcon from './svg/favorite_16.svg';
+import ShareIcon from './svg/share_16.svg';
 import Bell from './svg/pull_16.svg?react';
 
 import NotFound404 from './png/404background.png';
@@ -27,4 +29,4 @@ import NotFound404 from './png/404background.png';
 export { Apple, GooglePlay, SmartTv, RuStore, AppGallery, AnyDev };
 export { VK, Odnoklassniki, Twitter, Viber, LinkedIn, Telegram };
 export { Avatar, Mail, Phone, NoAds, ArrowLeft, ArrowRight };
-export { SearchIcon, Bell, NotFound404 };
+export { SearchIcon, Bell, NotFound404, FavoriteIcon, ShareIcon };

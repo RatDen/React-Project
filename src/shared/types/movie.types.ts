@@ -4,9 +4,9 @@ export interface Movie {
   description: string;
   primaryImage: string;
   type?: string;
-  averageRating: number;
+  averageRating?: number;
   releaseDate?: string;
-  runtimeMinutes?: number;
+  runtimeMinutes?: number | null;
   genres?: string[];
   contentRating?: string;
   countriesOfOrigin?: string[];
