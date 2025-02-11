@@ -1,3 +1,4 @@
+import { queryLoggerMiddleware } from '@/middleware/query-logger-middleware';
 import { moviesApi, userApi } from '@/services';
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
@@ -9,6 +10,7 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
+      .concat(queryLoggerMiddleware)
       .concat(userApi.middleware)
       .concat(moviesApi.middleware),
 });
