@@ -1,0 +1,29 @@
+.metaInfo_genres {
+  margin-top: 8px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.metaInfo_genres__item {
+  display: inline-flex;
+  padding: 2px 6px;
+  background-color: hsla(0, 0%, 100%, 0.16);
+  backdrop-filter: blur(0);
+  align-items: center;
+  border-radius: 4px;
+}
+
+.metaInfo_genres__item > span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

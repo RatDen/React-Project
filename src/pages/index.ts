@@ -7,3 +7,5 @@ export { Profile } from './profile';
 export { SignIn } from './SignIn';
 export { SignUp } from './SignUp';
 export { History } from './History';
+export { Search } from './Search';
+export { NotFound } from './NotFound';

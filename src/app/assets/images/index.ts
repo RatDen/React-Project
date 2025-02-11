@@ -40,14 +40,19 @@ import Gift from './svg/gift.svg';
 import Ivi from './svg/reposition_subscription_ivi.svg';
 import Exit from './svg/exit_16.svg';
 
-import Search from './svg/search_16.svg?react';
+import SearchIcon from './svg/search_16.svg?react';
+import FavoriteIcon from './svg/favorite_16.svg';
+import ShareIcon from './svg/share_16.svg';
 import Bell from './svg/pull_16.svg?react';
 import Close from './svg/close_20.svg?react';
 
 import Qr from './png/qrcode.png';
 
+import NotFound404 from './png/404background.png';
+
 export { Apple, GooglePlay, SmartTv, RuStore, AppGallery, AnyDev };
 export { VK, Odnoklassniki, Twitter, Viber, LinkedIn, Telegram };
+
 export {
   Account32,
   Notifications32,
@@ -78,5 +83,5 @@ export {
   Ivi,
   Exit,
 };
-export { Search, Bell, Close };
+export { SearchIcon, Bell, Close, NotFound404, FavoriteIcon, ShareIcon };
 export { Qr };

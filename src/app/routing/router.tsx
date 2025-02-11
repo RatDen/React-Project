@@ -8,6 +8,8 @@ import {
   SignIn,
   SignUp,
   History,
+  NotFound,
+  Search,
   Home,
   Profile,
 } from '@/pages';
@@ -26,6 +28,8 @@ export const router = createBrowserRouter([
       { path: Routes.SIGNUP, element: <SignUp /> },
       { path: Routes.HISTORY, element: <History /> },
       { path: Routes.FAVORITES, element: <Favorites /> },
+      { path: Routes.SEARCH, element: <Search /> },
+      { path: Routes.NOT_FOUND, element: <NotFound /> },
     ],
   },
 ]);

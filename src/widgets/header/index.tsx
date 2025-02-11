@@ -1,8 +1,8 @@
 import styles from './styles.module.css';
 import Logo from '@images/svg/iviLogo.svg?react';
 import { NavMenu } from '../navigation-menu';
-import { Avatar as AvatarIcon, Bell, Search } from '@/app/assets/images';
-import { ActionButton, ActionLink } from '@/shared/ui';
+import { Avatar as AvatarIcon, Bell } from '@/app/assets/images';
+import { ActionButton, ActionLink, SearchButton } from '@/shared/ui';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
 import { userApi } from '@/services';
@@ -32,10 +32,7 @@ export const Header = () => {
           <ActionButton promo>
             <p className={styles.header__button_text}>Оплатить подписку</p>
           </ActionButton>
-          <a href='#' className={styles.header__link}>
-            <Search />
-            <p>Поиск</p>
-          </a>
+          <SearchButton />
           <a href='#' className={styles.header__link}>
             <Bell />
           </a>

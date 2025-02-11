@@ -1,64 +1,72 @@
-import React, { FC, useState } from 'react';
+import { useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
 import { Card } from '@/components/Cards/Card';
 import styles from './styles.module.css';
-import { useMovies } from '@/shared/hooks/useMovies';
-import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 
-const CARD_WIDTH = 300;
+import { getYear } from '@/shared/utils/helperFunctions';
+import { ArrowLeft, ArrowRight } from '@/app/assets/images';
+import { Movie } from '@/shared/types/movie.types';
 
-export const Cards: FC = () => {
-  const { movies, error, loading } = useMovies();
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+type CardsProps = {
+  title: string;
+  data: Movie[];
+};
 
-  if (loading) {
-    return <p className={styles.loading}>Загрузка...</p>;
-  }
+export const Cards = ({ title, data }: CardsProps) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-  };
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, movies.length - 1));
-  };
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Фильмы-новинки &#62;</h1>
-      {error && <p className={styles.error}>Ошибка: {error}</p>}
-      <div className={styles.slider}>
-        <button onClick={handlePrev} className={styles.prev}>
-          <IoIosArrowBack />
-        </button>
-        <div className={styles.sliderWrapper}>
-          <div
-            className={styles.sliderMove}
-            style={{
-              transform: `translateX(-${currentIndex * CARD_WIDTH}px)`,
-            }}
-          >
-            {movies.map((movie) => (
-              <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}>
-                <Card
-                  title={movie.title}
-                  rating={movie.rating}
-                  year={movie.year}
-                  country={movie.country}
-                  duration={movie.duration}
-                  genre={movie.genre}
-                  category={movie.category}
-                  image={movie.image}
-                />
-              </Link>
-            ))}
-          </div>
+    <section className={styles.cardsContainer}>
+      <h2 className={styles.title}>{title}</h2>
+
+      <div className={styles.embla}>
+        <div className={styles.embla__viewport} ref={emblaRef}>
+          <ul className={styles.embla__container}>
+            {data &&
+              data.map((movie) => (
+                <li className={styles.embla__slide} key={movie.id}>
+                  <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}>
+                    <Card
+                      title={movie.primaryTitle}
+                      image={movie.primaryImage}
+                      rating={movie.averageRating || undefined}
+                      year={getYear(movie.releaseDate)}
+                      country={
+                        movie.countriesOfOrigin
+                          ? movie.countriesOfOrigin[0]
+                          : ''
+                      }
+                      duration={movie.runtimeMinutes || ''}
+                      genre={movie.genres ? movie.genres[0] : ''}
+                      category={movie.type || 'Фильм'}
+                    />
+                  </Link>
+                </li>
+              ))}
+          </ul>
         </div>
-        <button onClick={handleNext} className={styles.next}>
-          <IoIosArrowForward />
-        </button>
       </div>
-    </div>
+
+      <div className={styles.embla__prev} onClick={scrollPrev}>
+        <img src={ArrowLeft} alt='Slider arrow left' />
+      </div>
+      <div className={styles.embla__next} onClick={scrollNext}>
+        <img src={ArrowRight} alt='Slider arrow right' />
+      </div>
+
+      <div className={styles.slider}>
+        <div className={styles.container}></div>
+      </div>
+    </section>
   );
 };

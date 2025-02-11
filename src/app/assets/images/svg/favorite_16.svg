@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" width="16"
+  height="16" preserveAspectRatio="xMidYMid meet"
+  style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+  <path xmlns="http://www.w3.org/2000/svg"
+    d="M14 7.5V14.75C14 15.44 13.44 16 12.75 16C12.522 16 12.125 15.832 12.125 15.832L8 13.344L3.875 15.832C3.875 15.832 3.478 16 3.25 16C2.56 16 2 15.44 2 14.75V7.5C2 1.496 2.739 0 8 0C13.261 0 14 1.496 14 7.5ZM12 13.421V7.5C12 2 11.622 2 8 2C4.378 2 4 2 4 7.5V13.421L8 11.008L12 13.421Z"
+    fill="#fff" />
+</svg>

@@ -1,3 +1,4 @@
+export * from './search-section';
 export * from './avatar';
 export * from './certificate-button';
 export * from './footer';

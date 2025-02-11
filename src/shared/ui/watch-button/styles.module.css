@@ -1,0 +1,36 @@
+.buySubscription {
+  background-color: #f30745;
+  text-align: center;
+  border-radius: 16px;
+  height: 48px;
+  width: 288px;
+  padding: 2px 4px;
+
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buySubscription:hover {
+  background-color: #f9255d;
+  transition-duration: 80ms;
+}
+
+.buySubscription_primaryText {
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.buySubscription_secondaryText {
+  color: hsla(0, 0%, 100%, 0.72);
+  white-space: nowrap;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}

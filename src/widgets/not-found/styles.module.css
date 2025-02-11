@@ -1,0 +1,22 @@
+.wrapper {
+  background-image: url('/404background.png');
+  min-height: 348px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #a5a1b2;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 8px;
+}
