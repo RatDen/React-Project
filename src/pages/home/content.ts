@@ -1,6 +1,6 @@
 // TODO: добавить загрузку реальных данных и удалить
 
-import { PromoSlide } from '@/shared/types/preview/promo-slider.types';
+import { PromoSlide } from '@/shared/types/promo-slider.types';
 
 export const PromoSlides: PromoSlide[] = [
   {

@@ -1,22 +1,28 @@
 import styles from './styles.module.css';
-import { NavMenu } from '../navigation-menu';
 import Logo from '@images/svg/iviLogo.svg?react';
-import { Avatar, Bell } from '@/app/assets/images';
+import { NavMenu } from '../navigation-menu';
+import { Avatar as AvatarIcon, Bell } from '@/app/assets/images';
 import { ActionButton, ActionLink, SearchButton } from '@/shared/ui';
-
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
+import { userApi } from '@/services';
+import { FIXED_CACHE_KEY_USER } from '@/shared/config/api';
+import { Avatar } from '@/widgets';
 
 {
   /* TODO: реализовать анимацию наведения (сделать компонент-обертку для элементов хедера) */
 }
 
 export const Header = () => {
+  const [_, { data }] = userApi.useUserLoginMutation({
+    fixedCacheKey: FIXED_CACHE_KEY_USER,
+  });
+
   return (
     <header className={styles.header}>
       <div className={styles.header__content}>
         <div className={styles.header__content_wrap}>
-          <Link to='/'>
+          <Link to={Routes.ROOT}>
             <Logo />
           </Link>
           <NavMenu />
@@ -30,12 +36,16 @@ export const Header = () => {
           <a href='#' className={styles.header__link}>
             <Bell />
           </a>
-          <Link to={Routes.SIGNIN}>
+          {data ? (
+            <Link to={Routes.PROFILE}>
+              <Avatar name={data.FullName} size='small' />
+            </Link>
+          ) : (
             <div className={styles.header__profile_button}>
-              <ActionLink href='#'>
+              <ActionLink href={Routes.PROFILE}>
                 <div className={styles.header__profile_button_wrap}>
                   <img
-                    src={Avatar}
+                    src={AvatarIcon}
                     alt='Аватар'
                     className={styles.header__profile_button__icon}
                   />
@@ -43,7 +53,7 @@ export const Header = () => {
                 </div>
               </ActionLink>
             </div>
-          </Link>
+          )}
         </div>
       </div>
     </header>

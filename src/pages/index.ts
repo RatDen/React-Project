@@ -1,8 +1,9 @@
 export { Layout } from './layout';
-export { HomePage } from './HomePage';
+export { Home } from './home';
 export { Favorites } from './Favorites';
 export { Movies } from './Movies';
 export { Movie } from './Movie';
+export { Profile } from './profile';
 export { SignIn } from './SignIn';
 export { SignUp } from './SignUp';
 export { History } from './History';

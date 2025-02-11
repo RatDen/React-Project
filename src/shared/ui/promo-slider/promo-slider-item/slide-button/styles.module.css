@@ -11,5 +11,5 @@
 }
 
 .link:hover {
-  background-color: #f9255d;
+  background-color: var(--color-accent-hover, #f9255d);
 }

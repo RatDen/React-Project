@@ -1,0 +1,5 @@
+.uid {
+  color: #7e798f;
+  font-weight: 400;
+  font-size: var(--font-size-s, 13px);
+}

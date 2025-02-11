@@ -1,8 +1,10 @@
 import styles from './styles.module.css';
 import { InfoItem } from './info-item';
 import { About, Sections } from '../lists';
-import { ActionLink, ActionButton } from '@/shared/ui';
+import { ActionLink, ActionButton, ActionLinkExternal } from '@/shared/ui';
 import { Mail, NoAds, Phone } from '@/app/assets/images';
+import { Link } from 'react-router';
+import { ExternalLinks, Routes } from '@/shared/config';
 
 export const Info = () => {
   return (
@@ -20,13 +22,13 @@ export const Info = () => {
         <ul className={styles.info_list}>
           {Sections.map((item, index) => (
             <li key={index}>
-              <a href={item.link}>{item.title}</a>
+              <Link to={item.link}>{item.title}</Link>
             </li>
           ))}
           <li key='special'>
-            <a href='#' className='special_text'>
+            <Link to={Routes.CERT} className='special_text'>
               Активация сертификата
-            </a>
+            </Link>
           </li>
         </ul>
       </InfoItem>
@@ -35,14 +37,14 @@ export const Info = () => {
 
         <div className={styles.button_group}>
           <div className={styles.button_group_wrap}>
-            <ActionLink href='#'>
+            <ActionLink href={Routes.PROFILE_SUPPORT}>
               <p className={styles.chat_button__text}>Написать в чате</p>
             </ActionLink>
           </div>
           <div className={styles.button_group_wrap}>
-            <ActionLink href='#' square>
+            <ActionLinkExternal href={ExternalLinks.MAIL_TO} square>
               <img src={Mail} alt='mail' />
-            </ActionLink>
+            </ActionLinkExternal>
             <ActionButton square>
               <img src={Phone} alt='phone' />
             </ActionButton>
@@ -50,7 +52,7 @@ export const Info = () => {
         </div>
 
         <div>
-          <a href='#'>
+          <a href={ExternalLinks.SUPPORT}>
             <h3 className={styles.info__article__header}>ask.ivi.ru</h3>
           </a>
           <p>Ответы на вопросы</p>
@@ -58,9 +60,9 @@ export const Info = () => {
       </InfoItem>
 
       <InfoItem wide centered>
-        <a href='#' className={styles.promo_widget}>
+        <button className={styles.promo_widget}>
           <img src={NoAds} alt='noAds' />
-        </a>
+        </button>
         <p>Смотрите фильмы, сериалы и мультфильмы без рекламы</p>
       </InfoItem>
     </div>

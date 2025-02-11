@@ -15,6 +15,7 @@ import {
   LinkedIn,
   Telegram,
 } from '@/app/assets/images';
+import { Routes } from '@/shared/config';
 
 export type SimpleLink = {
   link: string;
@@ -23,74 +24,74 @@ export type SimpleLink = {
 
 export const About: SimpleLink[] = [
   {
-    link: '#',
+    link: 'https://corp.ivi.ru/',
     title: 'О компании',
   },
   {
-    link: '#',
+    link: 'https://corp.ivi.ru/career/#career-vacancy-block',
     title: 'Вакансии',
   },
   {
-    link: '#',
+    link: '/pages/beta',
     title: 'Программа бета-тестирования',
   },
   {
-    link: '#',
+    link: '/info/partners',
     title: 'Информация для партнёров',
   },
   {
-    link: '#',
+    link: 'https://corp.ivi.ru/advertisers/',
     title: 'Размещение рекламы',
   },
   {
-    link: '#',
+    link: '/info/agreement',
     title: 'Пользовательское соглашение',
   },
   {
-    link: '#',
+    link: '/info/confidential',
     title: 'Политика конфиденциальности',
   },
   {
-    link: '#',
+    link: '/info/recomtech',
     title: 'На Иви применяются \n рекомендательные технологии',
   },
   {
-    link: '#',
+    link: '/info/goryachaya-liniya-komplaens',
     title: 'Комплаенс',
   },
   {
-    link: '#',
+    link: '/reviews',
     title: 'Оставить отзыв',
   },
 ];
 
 export const Sections: SimpleLink[] = [
   {
-    link: '#',
+    link: Routes.ROOT,
     title: 'Мой Иви',
   },
   {
-    link: '#',
+    link: Routes.NEW,
     title: 'Что нового',
   },
   {
-    link: '#',
+    link: Routes.MOVIES,
     title: 'Фильмы',
   },
   {
-    link: '#',
+    link: Routes.SERIES,
     title: 'Сериалы',
   },
   {
-    link: '#',
+    link: Routes.ANIMATION,
     title: 'Мультфильмы',
   },
   {
-    link: '#',
+    link: Routes.TVPLUS,
     title: 'ТВ',
   },
   {
-    link: '#',
+    link: Routes.GOOD_MOVIES,
     title: 'Что посмотреть',
   },
 ];
@@ -105,42 +106,42 @@ export type SideSource = {
 
 export const SideSources: SideSource[] = [
   {
-    link: '',
+    link: 'https://go.onelink.me/app/devicesiOS',
     title: 'App Store',
     text: 'Загрузить в',
     image: Apple,
     alt: 'apple',
   },
   {
-    link: '',
+    link: 'https://go.onelink.me/app/devicesAndroid',
     title: 'Google Play',
     text: 'Доступно в',
     image: GooglePlay,
     alt: 'google play',
   },
   {
-    link: '',
+    link: '/pages/tvsmart',
     title: 'Smart TV',
     text: 'Смотрите на',
     image: SmartTv,
     alt: 'smart tv',
   },
   {
-    link: '',
+    link: 'https://www.rustore.ru/catalog/app/ru.ivi.client',
     title: 'RuStore',
     text: 'Скачайте из',
     image: RuStore,
     alt: 'ruStore',
   },
   {
-    link: '',
+    link: 'https://appgallery.huawei.com/app/C102340619',
     title: 'AppGallery',
     text: 'Откройте в',
     image: AppGallery,
     alt: 'appGallery',
   },
   {
-    link: '',
+    link: '/devices',
     title: 'Все устройства',
     text: '',
     image: AnyDev,
@@ -156,32 +157,32 @@ export type SocialsLink = {
 
 export const Socials: SocialsLink[] = [
   {
-    link: '',
+    link: 'https://vk.com/iviru?crc=fa4448c13e06e69ba9e814e8743c7e2e',
     image: VK,
     alt: 'Vk',
   },
   {
-    link: '',
+    link: 'https://ok.ru/ivi.ru',
     image: Odnoklassniki,
     alt: 'Odnoklassniki',
   },
   {
-    link: '',
+    link: 'https://twitter.com/ivi_ru',
     image: Twitter,
     alt: 'Twitter',
   },
   {
-    link: '',
+    link: 'https://vb.me/a0544c',
     image: Viber,
     alt: 'Viber',
   },
   {
-    link: '',
+    link: 'https://www.linkedin.com/company/2543415/',
     image: LinkedIn,
     alt: 'LinkedIn',
   },
   {
-    link: '',
+    link: 'https://t.me/official_iviru',
     image: Telegram,
     alt: 'Telegram',
   },
