@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
-import { useGetSingleMovieQuery } from '@/features/movies/moviesApiSlice';
+import { useGetSingleMovieQuery } from '@/services';
+import { CardInfo } from '@/shared/ui';
 import { invariant } from '@/shared/utils/helperFunctions';
-import { NotFoundInfo } from '@/widgets/not-found';
-import { CardInfo } from '@/components/CardInfo';
+import { NotFoundInfo } from '@/widgets';
 
 export function Movie() {
   const { id } = useParams<{ id: string }>();

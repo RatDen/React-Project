@@ -1,4 +1,4 @@
-import { Card } from '@/components/Cards/Card';
+import { Card } from '@/shared/ui/cards/card';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
 import styles from './styles.module.css';

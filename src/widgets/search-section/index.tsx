@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import { useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { useSearchMoviesQuery } from '@/features/movies/moviesApiSlice';
+import { useSearchMoviesQuery } from '@/services/movies-api';
 import { useDebounce } from '@/shared/hooks/useDebounce';
 import { SearchResults } from './search-results';
 
@@ -51,6 +51,7 @@ export function SearchSection() {
         <h1 className={styles.searchInput_title}>Поиск</h1>
         <form className={styles.form}>
           <input
+            className={styles.input}
             ref={inputRef}
             type='text'
             placeholder='Фильмы, сериалы, жанры и персоны'

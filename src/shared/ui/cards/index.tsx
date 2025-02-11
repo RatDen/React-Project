@@ -1,13 +1,12 @@
+import styles from './styles.module.css';
 import { useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Link } from 'react-router-dom';
 import { Routes } from '@/shared/config';
-import { Card } from '@/components/Cards/Card';
-import styles from './styles.module.css';
-
 import { getYear } from '@/shared/utils/helperFunctions';
 import { ArrowLeft, ArrowRight } from '@/app/assets/images';
 import { Movie } from '@/shared/types/movie.types';
+import { Card } from './card';
 
 type CardsProps = {
   title: string;
