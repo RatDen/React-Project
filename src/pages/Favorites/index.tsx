@@ -2,7 +2,10 @@ import { useMemo } from 'react';
 import { useAppSelector } from '@/app/store';
 import { RootState } from '@/app/store';
 import { Cards } from '@/shared/ui/cards';
-import { useGetTopBoxOfficeMoviesQuery } from '@/services';
+import {
+  useGetTopBoxOfficeMoviesQuery,
+  useGetIndiaUpcomingMoviesQuery,
+} from '@/services';
 
 export function Favorites() {
   const {
@@ -10,14 +13,16 @@ export function Favorites() {
     isLoading,
     error,
   } = useGetTopBoxOfficeMoviesQuery({});
+  const { data: IndiaUpcomingMovies } = useGetIndiaUpcomingMoviesQuery({});
   const favoriteIds = useAppSelector((state) => state.favorite.favorites);
 
   const favoriteMovies = useMemo(() => {
-    if (!topBoxOfficeMovies) return [];
-    return topBoxOfficeMovies?.filter((movie) =>
-      favoriteIds.includes(movie?.id)
-    );
-  }, [topBoxOfficeMovies, favoriteIds]);
+    if (!topBoxOfficeMovies || !IndiaUpcomingMovies) return [];
+
+    const allMovies = [...topBoxOfficeMovies, ...IndiaUpcomingMovies];
+
+    return allMovies.filter((movie) => favoriteIds.includes(movie?.id));
+  }, [topBoxOfficeMovies, IndiaUpcomingMovies, favoriteIds]);
 
   if (isLoading) return <div>Loading...</div>;
 
