@@ -8,10 +8,10 @@
 ### Description
 Study project of Aston (aston.dev) interns creating a simple version of ivi.ru - CIS analog of Netflix.
 
-*Stack used*: React, Redux, React Router, Radix-UI?
-*Rest API docs*: https://developer.themoviedb.org/docs/getting-started
+*Stack used*: React, Redux, React Router
+*Rest API docs*: https://rapidapi.com/octopusteam-octopusteam-default/api/imdb236
 
-The work on git is based on Gitflow methodology. The main branch is called 'main', development branch is called 'dev'. 
+The work on git is based on Gitflow methodology. 
 
 Commit message must follow the format: `'feat/fix/docs/chore/test/refactor(optional scope): <message>'`
 
