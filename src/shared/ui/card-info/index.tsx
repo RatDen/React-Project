@@ -1,14 +1,17 @@
 import { getYear } from '@/shared/utils/helperFunctions';
 import styles from './styles.module.css';
-
 import { Movie } from '@/shared/types/movie.types';
 import { ActionWatch, FavBtn, MoviePills, ShareBtn } from '@/shared/ui';
+import { useShareToTelegram } from '@/shared/hooks/useShareToTelegram'; 
 
 export interface CardInfoProps {
   movie: Movie;
 }
 
 export const CardInfo = ({ movie }: CardInfoProps) => {
+	const shareText = 'Посмотри этот фильм: ';
+	const handleShare = useShareToTelegram(movie?.url, shareText);
+
   return (
     <section className={styles.firstScreen}>
       <div className={styles.firstScreenWrapper}>
@@ -43,7 +46,7 @@ export const CardInfo = ({ movie }: CardInfoProps) => {
               <div className={styles.metaInfo_buttons}>
                 <ActionWatch />
                 <FavBtn />
-                <ShareBtn />
+                <ShareBtn onClick={handleShare} />
               </div>
               <div className={styles.noteText}>
                 <span>Первые 30 дней бесплатно</span>
