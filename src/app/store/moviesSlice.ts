@@ -30,7 +30,7 @@ export const fetchMovies = createAsyncThunk<
   void,
   { state: RootState }
 >(
-  'movies/fetchMovies',
+  '@movies/fetchMovies',
   async (_, thunkAPI) => {
     const response = await fetch(`${API_URL}?id=tt0111161`, {
       method: 'GET',
