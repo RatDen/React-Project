@@ -9,6 +9,7 @@
 Study project of Aston (aston.dev) interns creating a simple version of ivi.ru - CIS analog of Netflix.
 
 *Stack used*: React, Redux, React Router
+
 *Rest API docs*: https://rapidapi.com/octopusteam-octopusteam-default/api/imdb236
 
 The work on git is based on Gitflow methodology. 
