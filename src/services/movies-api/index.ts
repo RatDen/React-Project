@@ -8,7 +8,7 @@ import {
 import { Movie } from '@/shared/types/movie.types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const moviesApiSlice = createApi({
+export const moviesApi = createApi({
   reducerPath: 'movies',
   baseQuery: fetchBaseQuery({
     baseUrl: API_URL_BASE,
@@ -41,4 +41,4 @@ export const {
   useSearchMoviesQuery,
   useGetSingleMovieQuery,
   useGetIndiaUpcomingMoviesQuery,
-} = moviesApiSlice;
+} = moviesApi;

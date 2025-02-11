@@ -1,4 +1,4 @@
-import { SearchSection } from '@/widgets/search-section';
+import { SearchSection } from '@/widgets';
 
 export function Search() {
   return <SearchSection />;

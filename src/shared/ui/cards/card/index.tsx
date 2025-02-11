@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './styles.module.css';
-import { CardIcons } from '@/components/Cards/CardIcons';
+import { CardIcons } from './card-icons';
 
 const CATEGORY = 'series';
 
