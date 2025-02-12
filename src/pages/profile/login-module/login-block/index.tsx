@@ -36,7 +36,7 @@ export const LoginBlock = () => {
       </div>
       <div className={styles.separator} />
       <div className={styles.buttons}>
-        <ActionButton accent onClick={handleOpenModal}>
+        <ActionButton colors='accent' onClick={handleOpenModal}>
           <p>Войти через email или телефон</p>
         </ActionButton>
         <ActionButton>

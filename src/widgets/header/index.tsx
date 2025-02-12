@@ -29,7 +29,7 @@ export const Header = () => {
         </div>
         <div className={styles.header__actions_wrap}>
           {/* TODO: реализовать поиск, избранное(?), личный кабинет */}
-          <ActionButton promo>
+          <ActionButton colors='promo'>
             <p className={styles.header__button_text}>Оплатить подписку</p>
           </ActionButton>
           <SearchButton />
