@@ -42,7 +42,7 @@ export const Info = () => {
             </ActionLink>
           </div>
           <div className={styles.button_group_wrap}>
-            <ActionLinkExternal href={ExternalLinks.MAIL_TO} square>
+            <ActionLinkExternal href={ExternalLinks.MAIL_TO} form='square'>
               <img src={Mail} alt='mail' />
             </ActionLinkExternal>
             <ActionButton form='square'>

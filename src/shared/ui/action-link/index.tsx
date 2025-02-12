@@ -6,23 +6,21 @@ import { Link } from 'react-router';
 export type ActionLinkProps = {
   href: string;
   children?: ReactElement | ReactElement[];
-  round?: boolean;
-  square?: boolean;
+  form?: 'common' | 'round' | 'square';
 };
 
 export const ActionLink = ({
   href,
   children,
-  round = false,
-  square = false,
+  form = 'common',
 }: ActionLinkProps) => {
   return (
     <Link
       to={href}
       className={clsx(
         styles.link,
-        round ? styles.round : '',
-        square ? styles.square : ''
+        form === 'round' ? styles.round : '',
+        form === 'square' ? styles.square : ''
       )}
     >
       {children}

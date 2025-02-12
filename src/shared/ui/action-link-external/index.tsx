@@ -5,23 +5,21 @@ import { ReactElement } from 'react';
 type ActionLinkExternalProps = {
   href: string;
   children?: ReactElement | ReactElement[];
-  round?: boolean;
-  square?: boolean;
+  form?: 'common' | 'round' | 'square';
 };
 
 export const ActionLinkExternal = ({
   href,
   children,
-  round = false,
-  square = false,
+  form = 'common',
 }: ActionLinkExternalProps) => {
   return (
     <a
       href={href}
       className={clsx(
         styles.link,
-        round ? styles.round : '',
-        square ? styles.square : ''
+        form === 'round' ? styles.round : '',
+        form === 'square' ? styles.square : ''
       )}
     >
       {children}
