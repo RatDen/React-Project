@@ -45,7 +45,7 @@ export const Info = () => {
             <ActionLinkExternal href={ExternalLinks.MAIL_TO} square>
               <img src={Mail} alt='mail' />
             </ActionLinkExternal>
-            <ActionButton square>
+            <ActionButton form='square'>
               <img src={Phone} alt='phone' />
             </ActionButton>
           </div>
