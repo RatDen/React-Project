@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { useAppSelector } from '@/app/store';
-import { RootState } from '@/app/store';
 import { Cards } from '@/shared/ui/cards';
 import {
   useGetTopBoxOfficeMoviesQuery,
   useGetIndiaUpcomingMoviesQuery,
 } from '@/services';
+import { selectFavoriteIds } from '@/app/store/selectors';
 
 export function Favorites() {
   const {
@@ -14,7 +14,7 @@ export function Favorites() {
     error,
   } = useGetTopBoxOfficeMoviesQuery({});
   const { data: IndiaUpcomingMovies } = useGetIndiaUpcomingMoviesQuery({});
-  const favoriteIds = useAppSelector((state) => state.favorite.favorites);
+  const favoriteIds = useAppSelector(selectFavoriteIds);
 
   const favoriteMovies = useMemo(() => {
     if (!topBoxOfficeMovies || !IndiaUpcomingMovies) return [];
