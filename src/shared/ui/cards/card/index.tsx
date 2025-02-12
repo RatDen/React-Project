@@ -5,7 +5,7 @@ import { CardIcons } from './card-icons';
 const CATEGORY = 'series';
 
 export interface CardProps {
-	url: string,
+  url: string;
   title: string;
   image: string;
   rating?: number;
@@ -17,7 +17,7 @@ export interface CardProps {
 }
 
 export const Card: FC<CardProps> = ({
-	url,
+  url,
   title,
   rating,
   year,
@@ -43,7 +43,7 @@ export const Card: FC<CardProps> = ({
               <p className={styles.desc}>
                 {year}, {country}, {genre}
               </p>
-              <p>{duration} мин</p>
+              {duration && <p>{duration} мин</p>}
             </div>
           </div>
           <div className={styles.rightSide}>

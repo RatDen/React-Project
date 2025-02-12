@@ -2,15 +2,15 @@ import { getYear } from '@/shared/utils/helperFunctions';
 import styles from './styles.module.css';
 import { Movie } from '@/shared/types/movie.types';
 import { ActionWatch, FavBtn, MoviePills, ShareBtn } from '@/shared/ui';
-import { useShareToTelegram } from '@/shared/hooks/useShareToTelegram'; 
+import { useShareToTelegram } from '@/shared/hooks/useShareToTelegram';
 
 export interface CardInfoProps {
   movie: Movie;
 }
 
 export const CardInfo = ({ movie }: CardInfoProps) => {
-	const shareText = 'Посмотри этот фильм: ';
-	const handleShare = useShareToTelegram(movie?.url, shareText);
+  const shareText = 'Посмотри этот фильм: ';
+  const handleShare = useShareToTelegram(movie?.url, shareText);
 
   return (
     <section className={styles.firstScreen}>
@@ -24,15 +24,19 @@ export const CardInfo = ({ movie }: CardInfoProps) => {
           <h1>{movie.primaryTitle}</h1>
           <section className={styles.metaInfo}>
             <ul className={styles.metaInfo_details}>
-              <li className={styles.metaInfo_details__rating}>
-                {movie.averageRating}
-              </li>
+              {movie.averageRating && (
+                <li className={styles.metaInfo_details__rating}>
+                  {movie.averageRating}
+                </li>
+              )}
               <li className={styles.metaInfo_details__releaseYear}>
                 {getYear(movie.releaseDate)}
               </li>
-              <li className={styles.metaInfo_details__duration}>
-                {movie.runtimeMinutes} мин.
-              </li>
+              {movie.runtimeMinutes && (
+                <li className={styles.metaInfo_details__duration}>
+                  {movie.runtimeMinutes} мин.
+                </li>
+              )}
               <li className={styles.metaInfo_details__isAdult}>
                 {movie.isAdult}
               </li>
