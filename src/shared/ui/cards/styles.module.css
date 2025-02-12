@@ -17,26 +17,26 @@
 }
 .embla__slide {
   flex: 0 0 156px;
-  margin-right: 16px;
   min-width: 0;
+  margin-right: 16px;
 }
 
 .embla__prev {
-  opacity: 0.74;
   position: absolute;
-  left: -32px;
   top: 50%;
-  cursor: pointer;
+  left: -32px;
+  opacity: 0.74;
   transition: opacity 0.2s ease-out;
+  cursor: pointer;
 }
 
 .embla__next {
-  opacity: 0.74;
   position: absolute;
-  right: -32px;
   top: 50%;
-  cursor: pointer;
+  right: -32px;
+  opacity: 0.74;
   transition: opacity 0.2s ease-out;
+  cursor: pointer;
 }
 
 .embla__prev:hover,

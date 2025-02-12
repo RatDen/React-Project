@@ -6,6 +6,7 @@ export const API_KEY = import.meta.env.VITE_TOKEN_KEY;
 export const API_HOST = import.meta.env.VITE_HOST;
 export const TOPBOX_OFFICE_URL = 'top-box-office';
 export const INDIA_UPCOMING_URL = 'india/upcoming';
+
 export const Nodes = {
   ROOT: 'root',
   MODAL: 'modal',

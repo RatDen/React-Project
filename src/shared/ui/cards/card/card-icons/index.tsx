@@ -1,9 +1,8 @@
 import React from 'react';
-import { FaRegBookmark } from 'react-icons/fa6';
+import { FaRegBookmark, FaRegEyeSlash } from 'react-icons/fa6';
 import { RiShareForwardLine } from 'react-icons/ri';
 import { PiMagicWand } from 'react-icons/pi';
 import { FaRegStar } from 'react-icons/fa';
-import { FaRegEyeSlash } from 'react-icons/fa6';
 import styles from './styles.module.css';
 
 interface CardIconsProps {

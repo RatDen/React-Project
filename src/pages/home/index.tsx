@@ -1,11 +1,9 @@
-import { PromoSlider } from '@/shared/ui';
-import { PromoSlides } from './content.js';
-
-import { Cards } from '@/components/Cards/Cards';
 import {
   useGetTopBoxOfficeMoviesQuery,
   useGetIndiaUpcomingMoviesQuery,
-} from '@/features/movies/moviesApiSlice';
+} from '@/services';
+import { PromoSlider, Cards } from '@/shared/ui';
+import { PromoSlides } from './content';
 
 export function Home() {
   const { data: topBoxOfficeMovies } = useGetTopBoxOfficeMoviesQuery({});

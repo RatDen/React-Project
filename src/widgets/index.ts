@@ -8,3 +8,6 @@ export * from './navigation-menu';
 export * from './share-subscribe-button';
 export * from './subscriptions-link';
 export * from './uid';
+export * from './search-section';
+export * from './not-found';
+export * from './watch-button';

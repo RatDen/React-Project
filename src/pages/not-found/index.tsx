@@ -1,4 +1,4 @@
-import { NotFoundInfo } from '@/widgets/not-found';
+import { NotFoundInfo } from '@/widgets';
 
 export function NotFound() {
   return <NotFoundInfo />;
