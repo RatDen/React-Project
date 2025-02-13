@@ -32,27 +32,29 @@ export const Cards = ({ title, data }: CardsProps) => {
         <div className={styles.embla__viewport} ref={emblaRef}>
           <ul className={styles.embla__container}>
             {data &&
-              data.map((movie) => (
-                <li className={styles.embla__slide} key={movie.id}>
-                  <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}>
-                    <Card
-											url={movie.url}
-                      title={movie.primaryTitle}
-                      image={movie.primaryImage}
-                      rating={movie.averageRating || undefined}
-                      year={getYear(movie.releaseDate)}
-                      country={
-                        movie.countriesOfOrigin
-                          ? movie.countriesOfOrigin[0]
-                          : ''
-                      }
-                      duration={movie.runtimeMinutes || ''}
-                      genre={movie.genres ? movie.genres[0] : ''}
-                      category={movie.type || 'Фильм'}
-                    />
-                  </Link>
-                </li>
-              ))}
+              data
+                .filter((movie) => movie.primaryImage)
+                .map((movie) => (
+                  <li className={styles.embla__slide} key={movie.id}>
+                    <Link to={`${Routes.MOVIES}${movie.id}`} key={movie.id}>
+                      <Card
+                        url={movie.url}
+                        title={movie.primaryTitle}
+                        image={movie.primaryImage}
+                        rating={movie.averageRating || undefined}
+                        year={getYear(movie.releaseDate)}
+                        country={
+                          movie.countriesOfOrigin
+                            ? movie.countriesOfOrigin[0]
+                            : ''
+                        }
+                        duration={movie.runtimeMinutes || ''}
+                        genre={movie.genres ? movie.genres[0] : ''}
+                        category={movie.type || 'Фильм'}
+                      />
+                    </Link>
+                  </li>
+                ))}
           </ul>
         </div>
       </div>
