@@ -1,3 +1,4 @@
+import { queryLoggerMiddleware } from '@/middleware/query-logger-middleware';
 import { moviesApi, userApi } from '@/services';
 import { favoriteReducer } from '@/services/favoriteSlice';
 import { configureStore } from '@reduxjs/toolkit';
@@ -11,6 +12,7 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
+      .concat(queryLoggerMiddleware)
       .concat(userApi.middleware)
       .concat(moviesApi.middleware),
 });

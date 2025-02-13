@@ -16,7 +16,7 @@ export function Home() {
       {topBoxOfficeMovies ? (
         <Cards title='Советуем к просмотру' data={topBoxOfficeMovies} />
       ) : (
-        <p>Loading...</p>
+        <p>Загрузка...</p>
       )}
       {indiaUpcomingMovies ? (
         <Cards
@@ -24,7 +24,7 @@ export function Home() {
           data={indiaUpcomingMovies}
         />
       ) : (
-        <p>Loading...</p>
+        <p>Загрузка...</p>
       )}
     </>
   );

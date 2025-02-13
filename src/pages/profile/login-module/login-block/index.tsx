@@ -1,9 +1,13 @@
 import styles from './styles.module.css';
-import { useRef, useState } from 'react';
+import { useRef, useState, lazy, Suspense } from 'react';
 import { Qr, Device } from '@/app/assets/images';
 import { ActionButton } from '@/shared/ui';
-import { ModalLogin } from '@/widgets/modal-login';
 import { PortalModals } from '@/shared/ui';
+const ModalLogin = lazy(() =>
+  import('@/widgets/modal-login').then((module) => ({
+    default: module.ModalLogin,
+  }))
+);
 
 export const LoginBlock = () => {
   const [modal, setModal] = useState(false);
@@ -32,7 +36,7 @@ export const LoginBlock = () => {
       </div>
       <div className={styles.separator} />
       <div className={styles.buttons}>
-        <ActionButton accent onClick={handleOpenModal}>
+        <ActionButton colors='accent' onClick={handleOpenModal}>
           <p>Войти через email или телефон</p>
         </ActionButton>
         <ActionButton>
@@ -45,7 +49,9 @@ export const LoginBlock = () => {
 
       {modal && (
         <PortalModals>
-          <ModalLogin close={handleCloseModal} />
+          <Suspense fallback={<div>Загрузка...</div>}>
+            <ModalLogin close={handleCloseModal} />
+          </Suspense>
         </PortalModals>
       )}
     </div>

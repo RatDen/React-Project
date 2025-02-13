@@ -6,18 +6,20 @@ const CATEGORY = 'series';
 
 export interface CardProps {
 	id: string,
+  url: string;
   title: string;
   image: string;
   rating?: number;
   year?: number;
   country?: string;
-  duration?: number | '';
+  duration?: number | string;
   genre?: string;
   category?: string;
 }
 
 export const Card: FC<CardProps> = ({
 	id,
+  url,
   title,
   rating,
   year,
@@ -44,11 +46,11 @@ export const Card: FC<CardProps> = ({
               <p className={styles.desc}>
                 {year}, {country}, {genre}
               </p>
-              <p>{duration} мин</p>
+              {duration && <p>{duration} мин</p>}
             </div>
           </div>
           <div className={styles.rightSide}>
-            <CardIcons className={styles.icons} id={id}/>
+            <CardIcons className={styles.icons} id={id} url={url}/>
           </div>
         </div>
       </div>

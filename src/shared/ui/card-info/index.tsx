@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/app/store';
 import { toggleFavorite } from '@/services/favoriteSlice';
 import { Movie } from '@/shared/types/movie.types';
 import { ActionWatch, FavBtn, MoviePills, ShareBtn } from '@/shared/ui';
+import { useShareToTelegram } from '@/shared/hooks/useShareToTelegram';
 
 export interface CardInfoProps {
   movie: Movie;
@@ -19,6 +20,9 @@ export const CardInfo = ({ movie, id }: CardInfoProps) => {
   const handleToggle = () => {
     dispatch(toggleFavorite(id));
   };
+    
+  const shareText = 'Посмотри этот фильм: ';
+  const handleShare = useShareToTelegram(movie?.url, shareText);
 
   return (
     <section className={styles.firstScreen}>
@@ -32,15 +36,19 @@ export const CardInfo = ({ movie, id }: CardInfoProps) => {
           <h1>{movie.primaryTitle}</h1>
           <section className={styles.metaInfo}>
             <ul className={styles.metaInfo_details}>
-              <li className={styles.metaInfo_details__rating}>
-                {movie.averageRating}
-              </li>
+              {movie.averageRating && (
+                <li className={styles.metaInfo_details__rating}>
+                  {movie.averageRating}
+                </li>
+              )}
               <li className={styles.metaInfo_details__releaseYear}>
                 {getYear(movie.releaseDate)}
               </li>
-              <li className={styles.metaInfo_details__duration}>
-                {movie.runtimeMinutes} мин.
-              </li>
+              {movie.runtimeMinutes && (
+                <li className={styles.metaInfo_details__duration}>
+                  {movie.runtimeMinutes} мин.
+                </li>
+              )}
               <li className={styles.metaInfo_details__isAdult}>
                 {movie.isAdult}
               </li>
@@ -54,7 +62,7 @@ export const CardInfo = ({ movie, id }: CardInfoProps) => {
               <div className={styles.metaInfo_buttons}>
                 <ActionWatch />
                 <FavBtn isFavorite={isFavorite} onClick={handleToggle}/>
-                <ShareBtn />
+                <ShareBtn onClick={handleShare}/>
               </div>
               <div className={styles.noteText}>
                 <span>Первые 30 дней бесплатно</span>

@@ -74,7 +74,7 @@ export const ModalLogin = ({ close }: ModalLoginProps) => {
               })}
             />
             <ActionButton
-              accent
+              colors='accent'
               disabled={!isValid}
               onClick={handleSubmit(onSubmit)}
             >

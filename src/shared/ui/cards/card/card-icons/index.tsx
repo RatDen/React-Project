@@ -6,13 +6,15 @@ import { RiShareForwardLine } from 'react-icons/ri';
 import { PiMagicWand } from 'react-icons/pi';
 import { FaRegStar } from 'react-icons/fa';
 import styles from './styles.module.css';
+import { useShareToTelegram } from '@/shared/hooks/useShareToTelegram'; 
 
 interface CardIconsProps {
   id: string;
+  url: string;
   className?: string;
 }
 
-export const CardIcons: React.FC<CardIconsProps> = ({ id, className }) => {
+export const CardIcons: React.FC<CardIconsProps> = ({ id, url, className }) => {
   const dispatch = useAppDispatch();
   const favorites = useAppSelector((state) => state.favorite.favorites);
 
@@ -24,6 +26,9 @@ export const CardIcons: React.FC<CardIconsProps> = ({ id, className }) => {
 		event.preventDefault();
     dispatch(toggleFavorite(id));
   };
+      
+  const shareText = 'Посмотри этот фильм: ';
+	const handleShare = useShareToTelegram(url, shareText);
 
   return (
     <div className={`${styles.icons} ${className || ''}`}>
@@ -36,6 +41,7 @@ export const CardIcons: React.FC<CardIconsProps> = ({ id, className }) => {
       <RiShareForwardLine
         title='Поделиться с друзьями'
         className={styles.icon}
+				onClick={handleShare}
       />
       <PiMagicWand title='Похожее' className={styles.icon} />
       <FaRegStar title='Уже смотрел, оценить' className={styles.icon} />
