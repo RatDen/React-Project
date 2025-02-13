@@ -29,6 +29,6 @@ export function Movie() {
       </>
     );
   } else {
-    return movie ? <div>{<CardInfo movie={movie} />}</div> : <NotFoundInfo />;
+    return movie ? <div>{<CardInfo movie={movie} id={movie.id} />}</div> : <NotFoundInfo />;
   }
 }

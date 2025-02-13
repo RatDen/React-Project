@@ -5,6 +5,7 @@ import { CardIcons } from './card-icons';
 const CATEGORY = 'series';
 
 export interface CardProps {
+	id: string,
   url: string;
   title: string;
   image: string;
@@ -17,6 +18,7 @@ export interface CardProps {
 }
 
 export const Card: FC<CardProps> = ({
+	id,
   url,
   title,
   rating,
@@ -27,6 +29,7 @@ export const Card: FC<CardProps> = ({
   category,
   image,
 }) => {
+
   return (
     <div className={styles.cardContainer}>
       {category === CATEGORY ? <p className={styles.tag}>сериал Иви</p> : null}
@@ -47,7 +50,7 @@ export const Card: FC<CardProps> = ({
             </div>
           </div>
           <div className={styles.rightSide}>
-            <CardIcons className={styles.icons} url={url} />
+            <CardIcons className={styles.icons} id={id} url={url}/>
           </div>
         </div>
       </div>
