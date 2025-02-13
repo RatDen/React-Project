@@ -18,7 +18,7 @@ export const More = () => {
       <ul className={styles.container__block}>
         {Socials.map(({ link, image, alt }, index) => (
           <li key={index}>
-            <ActionLinkExternal href={link} round>
+            <ActionLinkExternal href={link} form='round'>
               <img src={image} alt={alt} className={styles.socials__image} />
             </ActionLinkExternal>
           </li>

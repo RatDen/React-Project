@@ -10,7 +10,7 @@
 }
 
 .firstScreen_img {
-  width: 410px;
+  max-width: 410px;
 }
 
 .firstScreen_info {
